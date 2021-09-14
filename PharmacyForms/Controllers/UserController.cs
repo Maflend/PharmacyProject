@@ -10,7 +10,7 @@ namespace PharmacyForms
     public class UserController
     {
         PharmacyContext db = new PharmacyContext();
-        public void Add(User user)
+        public void Post(User user)
         {
             User u = new User();
             u.Login = user.Login;
@@ -18,6 +18,16 @@ namespace PharmacyForms
             u.Role = u.Role;
             db.Add(u);
             db.SaveChanges();
+        }
+        public User GetById(int id) // Проверить id перед вызовом метода
+        {
+            User user = new User();
+            user = db.Users.FirstOrDefault(i => i.Id == id);
+            return user;
+        }
+        public IEnumerable<User> GetAll()
+        {
+            return db.Users.ToList();
         }
     }
 }
