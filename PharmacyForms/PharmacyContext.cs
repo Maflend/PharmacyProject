@@ -16,12 +16,13 @@ namespace PharmacyForms
         public DbSet<Order> Orders { get; set; }
         public PharmacyContext()
         {
-            Database.EnsureDeleted();
+           // Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=COM-118-12\SQLEXPRESS;Database=BaseTest;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;"); // MAX
+            //optionsBuilder.UseSqlServer(@"Server=COM-118-12\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;"); // ALINA
         }
 
     }
