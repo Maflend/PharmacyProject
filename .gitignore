@@ -391,4 +391,8 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/csharp
+=======
+# End of https://www.toptal.com/developers/gitignore/api/csharp
+>>>>>>> d40bf73d47497c65b20a829b7542b877ca04bd5a
