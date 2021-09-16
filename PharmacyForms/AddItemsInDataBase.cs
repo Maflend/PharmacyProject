@@ -1,4 +1,5 @@
 ﻿using PhamacyLibrary.Models;
+using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,11 @@ namespace PharmacyForms
             Category category2 = new Category() { Name = "Жаропонижающее" };
             db.Categories.AddRange(category1, category2);
 
-            User user1 = new User() { Login = "Max", Password = "1234", Role = Roles.Client };
-            User user2 = new User() { Login = "Alinka", Password = "3333", Role = Roles.Director };
-            db.Users.AddRange(user1, user2);
+            User user1 = new User() { Login = "MaximSolnce", Password = "Top123123", Role = Roles.Client };
+            User user2 = new User() { Login = "AlinkaMalinka", Password = "Kot123FDF23", Role = Roles.Director };
+            User user3 = new User() { Login = "BlueFilen", Password = "Rot333FF33", Role = Roles.Stuff };
+            User user4 = new User() { Login = "Topchikmen", Password = "Pot122Fd23", Role = Roles.Admin };
+            db.Users.AddRange(user1, user2,user3 ,user4);
 
             Order order1 = new Order() { DateSale = new DateTime(2015, 7, 20), User = user1 };
             Order order2 = new Order() { DateSale = new DateTime(2016, 12, 11),User = user2 };
