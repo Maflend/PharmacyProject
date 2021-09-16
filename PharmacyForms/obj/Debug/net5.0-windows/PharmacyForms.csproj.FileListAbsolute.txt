@@ -54,3 +54,5 @@ C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-win
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\ref\PharmacyForms.dll
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.pdb
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.genruntimeconfig.cache
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.StartForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.SignUpForm.resources

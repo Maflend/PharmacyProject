@@ -1,5 +1,5 @@
 ﻿
-namespace AptekaWF
+namespace PharmacyForms
 {
     partial class StartForm
     {
@@ -82,6 +82,7 @@ namespace AptekaWF
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Войти";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnSignUp
             // 
@@ -92,6 +93,7 @@ namespace AptekaWF
             this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Зарегистрироваться";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // StartForm
             // 
@@ -105,6 +107,7 @@ namespace AptekaWF
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLogin);
             this.Name = "StartForm";
+            this.Load += new System.EventHandler(this.StartForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

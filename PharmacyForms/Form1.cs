@@ -16,11 +16,14 @@ namespace PharmacyForms
         {
             InitializeComponent();
             #region Если надо заполнить БД изначальными данными для теста
-            //AddItemsInDataBase add = new AddItemsInDataBase();
-            //add.Add();
+          //  AddItemsInDataBase add = new AddItemsInDataBase();
+           // add.Add();
             #endregion
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
