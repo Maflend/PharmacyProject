@@ -16,12 +16,18 @@ namespace PharmacyForms
 {
     public partial class SignUpForm : Form
     {
+        private  Form parentForm;
         private bool validLog;
         private bool validPass;
         public SignUpForm()
         {
             InitializeComponent();
-        }    
+        }
+        public SignUpForm(Form form)
+        {
+            InitializeComponent();
+            parentForm = form;
+        }
         private void tbTextChanged(object sender, EventArgs e) //Можно подумать как избавиться от дуближа
         {
             var tb = sender as TextBox;
@@ -60,6 +66,7 @@ namespace PharmacyForms
                     newUser.Role = Roles.Client;
                     userController.Post(newUser);
                     MessageBox.Show("Вы зарегистрированы!");
+                    this.Close();
                 }
                 else
                 {
@@ -129,10 +136,25 @@ namespace PharmacyForms
 
         private void SignUp_Load(object sender, EventArgs e)
         {
+            parentForm.Hide();
             lblValidLogin.Text = "";
             lblValidPassword.Text = "";
         }
 
-      
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parentForm.Close();
+        }
+
+        private void SignUpForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
+        }
     }
 }
