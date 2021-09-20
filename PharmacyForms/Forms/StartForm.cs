@@ -69,6 +69,7 @@ namespace PharmacyForms
         private void btnLoginAsGuest_Click(object sender, EventArgs e)
         {
             var u = new User() { Login = "Гость", Password = null, Role = Roles.Guest };
+            LogInUser = u;
             this.Close();
         }
     }

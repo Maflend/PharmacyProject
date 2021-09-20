@@ -13,20 +13,23 @@ namespace PharmacyForms
 {
     public partial class ProductForm : Form
     {
-        private Categories Categories;
+        private Categories currentCategory;
+        private Roles currentRole;
         public ProductForm()
         {
             InitializeComponent();
         }
-        public ProductForm(Categories categories)
+        public ProductForm(Roles role,Categories category)
         {
             InitializeComponent();
-            Categories = categories;
+            currentCategory = category;
+            currentRole = role;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // ЗАПОЛНИТЬ dgvProduct при загрузке. Вывод определенных дополнительных столбцов таблицы для конкретной роли происходит засчет проверки Caterogies. 
+            // ЗАПОЛНИТЬ dgvProduct при загрузке. Вывод определенных дополнительных столбцов таблицы для конкретной роли происходит засчет проверки Role. А категории - Category
+            label1.Text = currentCategory.ToString() + "    " + currentRole.ToString();
         }
     }
 }

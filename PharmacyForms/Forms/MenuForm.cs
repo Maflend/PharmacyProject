@@ -1,5 +1,6 @@
 ﻿using PhamacyLibrary.Models;
 using PharmacyForms.Forms;
+using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,11 +20,24 @@ namespace PharmacyForms.Forms
         private int tempIndex;
         private Form activeForm;
         private static User currentUser;
+
+        static StartForm startForm;
         public MenuForm()
         {
             InitializeComponent();
             random = new Random();
             panelCategories.Visible = false;          
+        }
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            // Для заполнения БД начальными данными
+            //AddItemsInDataBase add = new AddItemsInDataBase();
+            //add.Add();
+            // ...
+            startForm = new StartForm(this);
+            SetName();
+            if (currentUser != null)
+                lblUserLogin.Text = currentUser.Login;
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -117,18 +131,8 @@ namespace PharmacyForms.Forms
             else
                 subMenu.Visible = false;
         }
-        static StartForm startForm;
-        private void MenuForm_Load(object sender, EventArgs e)
-        {
-            // Для заполнения БД начальными данными
-            //AddItemsInDataBase add = new AddItemsInDataBase();
-            //add.Add();
-            // ...
-            startForm = new StartForm(this);
-            SetName();
-            if (currentUser != null)
-                lblUserLogin.Text = currentUser.Login;
-        }
+ 
+       
         private static void SetName()
         {
             //StartForm startForm = 
@@ -140,7 +144,10 @@ namespace PharmacyForms.Forms
 
         private void btnOpenProductForm_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ProductForm(), sender);
+            Button button = (Button)sender;
+            var buttonCategory = button.Text;
+            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategory);
+            OpenChildForm(new ProductForm(currentUser.Role, category), sender);
         }
     }
 }

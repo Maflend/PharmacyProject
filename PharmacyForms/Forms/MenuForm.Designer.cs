@@ -131,6 +131,7 @@ namespace PharmacyForms.Forms
             this.btnVitamins.TabIndex = 5;
             this.btnVitamins.Text = "Витамины";
             this.btnVitamins.UseVisualStyleBackColor = false;
+            this.btnVitamins.Click += new System.EventHandler(this.btnOpenProductForm_Click);
             // 
             // btnAntibiotics
             // 
@@ -145,6 +146,7 @@ namespace PharmacyForms.Forms
             this.btnAntibiotics.TabIndex = 4;
             this.btnAntibiotics.Text = "Антибиотики";
             this.btnAntibiotics.UseVisualStyleBackColor = false;
+            this.btnAntibiotics.Click += new System.EventHandler(this.btnOpenProductForm_Click);
             // 
             // btnAntiviralAgent
             // 
@@ -159,6 +161,7 @@ namespace PharmacyForms.Forms
             this.btnAntiviralAgent.TabIndex = 3;
             this.btnAntiviralAgent.Text = "Противовирусные";
             this.btnAntiviralAgent.UseVisualStyleBackColor = false;
+            this.btnAntiviralAgent.Click += new System.EventHandler(this.btnOpenProductForm_Click);
             // 
             // btnPainReliever
             // 
@@ -173,6 +176,7 @@ namespace PharmacyForms.Forms
             this.btnPainReliever.TabIndex = 2;
             this.btnPainReliever.Text = "Болеутоляющие";
             this.btnPainReliever.UseVisualStyleBackColor = false;
+            this.btnPainReliever.Click += new System.EventHandler(this.btnOpenProductForm_Click);
             // 
             // btnAntipyretic
             // 

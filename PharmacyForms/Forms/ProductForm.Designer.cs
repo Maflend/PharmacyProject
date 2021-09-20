@@ -32,8 +32,10 @@ namespace PharmacyForms
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.panelDataGrid = new System.Windows.Forms.Panel();
             this.panelActionBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panelDataGrid.SuspendLayout();
+            this.panelActionBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProduct
@@ -59,11 +61,21 @@ namespace PharmacyForms
             // 
             // panelActionBar
             // 
+            this.panelActionBar.Controls.Add(this.label1);
             this.panelActionBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActionBar.Location = new System.Drawing.Point(0, 0);
             this.panelActionBar.Name = "panelActionBar";
             this.panelActionBar.Size = new System.Drawing.Size(704, 119);
             this.panelActionBar.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(327, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // ProductForm
             // 
@@ -77,6 +89,8 @@ namespace PharmacyForms
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panelDataGrid.ResumeLayout(false);
+            this.panelActionBar.ResumeLayout(false);
+            this.panelActionBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -86,6 +100,7 @@ namespace PharmacyForms
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.Panel panelActionBar;
+        private System.Windows.Forms.Label label1;
     }
 }
 
