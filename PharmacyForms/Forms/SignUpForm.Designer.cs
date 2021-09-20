@@ -1,5 +1,5 @@
 ﻿
-namespace PharmacyForms
+namespace PharmacyForms.Forms
 {
     partial class SignUpForm
     {
@@ -160,9 +160,9 @@ namespace PharmacyForms
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSignUp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSignUp.Location = new System.Drawing.Point(0, -1);
+            this.btnSignUp.Location = new System.Drawing.Point(0, 0);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(403, 50);
+            this.btnSignUp.Size = new System.Drawing.Size(403, 49);
             this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Зарегистрироваться";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -182,12 +182,11 @@ namespace PharmacyForms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(60, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 30);
+            this.label4.Size = new System.Drawing.Size(183, 28);
             this.label4.TabIndex = 18;
             this.label4.Text = "Окно регистрации";
             this.label4.Click += new System.EventHandler(this.label4_Click);

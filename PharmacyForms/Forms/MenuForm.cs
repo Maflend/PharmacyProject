@@ -1,4 +1,5 @@
 ﻿using PhamacyLibrary.Models;
+using PharmacyForms.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmacyForms
+namespace PharmacyForms.Forms
 {
     public partial class MenuForm : Form
     {
@@ -30,7 +31,7 @@ namespace PharmacyForms
             {
                 activeForm.Close();
             }
-            ActivateButton(btnSender);
+           // ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -63,7 +64,7 @@ namespace PharmacyForms
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Segoe UI", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    currentButton.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
                     panelTitleBar.BackColor = color;
                 }
             }
@@ -76,7 +77,7 @@ namespace PharmacyForms
                 {
                     previousBtn.BackColor = Color.FromArgb(51,51,76);
                     previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    previousBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
                 }
             }
         }
@@ -84,7 +85,8 @@ namespace PharmacyForms
         private void btnCategories_Click(object sender, EventArgs e)
         {
             showSubMenu(panelCategories);
-            OpenChildForm(new Form1(), sender);
+            ActivateButton(sender);
+
         }
 
         private void btnShoppingCart_Click(object sender, EventArgs e)
@@ -96,13 +98,10 @@ namespace PharmacyForms
         private void btnProfile_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            OpenChildForm(new ProfileForm(), sender);
             ActivateButton(sender);
         }
 
-        public void customizeDesign()
-        {
-            panelCategories.Visible = false;
-        }
         public void hideSubMenu()
         {
             if (panelCategories.Visible == true)
@@ -121,6 +120,10 @@ namespace PharmacyForms
         static StartForm startForm;
         private void MenuForm_Load(object sender, EventArgs e)
         {
+            // Для заполнения БД начальными данными
+            //AddItemsInDataBase add = new AddItemsInDataBase();
+            //add.Add();
+            // ...
             startForm = new StartForm(this);
             SetName();
             if (currentUser != null)
@@ -134,6 +137,10 @@ namespace PharmacyForms
             currentUser = startForm.GetUser();
             
         }
-      
+
+        private void btnOpenProductForm_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ProductForm(), sender);
+        }
     }
 }

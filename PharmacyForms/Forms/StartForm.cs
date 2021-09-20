@@ -1,6 +1,7 @@
 ﻿
 using PhamacyLibrary.Models;
 using PharmacyForms.Controllers;
+using PharmacyForms.Forms;
 using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,12 @@ namespace PharmacyForms
         {
             this.Close();
             parentsForm.Close();
+        }
+
+        private void btnLoginAsGuest_Click(object sender, EventArgs e)
+        {
+            var u = new User() { Login = "Гость", Password = null, Role = Roles.Guest };
+            this.Close();
         }
     }
 }

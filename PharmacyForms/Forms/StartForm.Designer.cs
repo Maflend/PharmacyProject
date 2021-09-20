@@ -44,6 +44,7 @@ namespace PharmacyForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLoginAsGuest = new System.Windows.Forms.Button();
             this.panelBar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,7 +92,7 @@ namespace PharmacyForms
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSignUp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSignUp.Location = new System.Drawing.Point(0, 144);
+            this.btnSignUp.Location = new System.Drawing.Point(0, 178);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(152, 50);
             this.btnSignUp.TabIndex = 5;
@@ -134,6 +135,7 @@ namespace PharmacyForms
             // panelBar
             // 
             this.panelBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(52)))), ((int)(((byte)(65)))));
+            this.panelBar.Controls.Add(this.btnLoginAsGuest);
             this.panelBar.Controls.Add(this.label2);
             this.panelBar.Controls.Add(this.lblLogin);
             this.panelBar.Controls.Add(this.panel3);
@@ -141,7 +143,7 @@ namespace PharmacyForms
             this.panelBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(152, 194);
+            this.panelBar.Size = new System.Drawing.Size(152, 228);
             this.panelBar.TabIndex = 15;
             // 
             // label2
@@ -197,7 +199,7 @@ namespace PharmacyForms
             // 
             this.panel2.Controls.Add(this.btnSignIn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(152, 144);
+            this.panel2.Location = new System.Drawing.Point(152, 178);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(397, 50);
             this.panel2.TabIndex = 16;
@@ -224,11 +226,26 @@ namespace PharmacyForms
             this.label3.TabIndex = 18;
             this.label3.Text = "Окно авторизации";
             // 
+            // btnLoginAsGuest
+            // 
+            this.btnLoginAsGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLoginAsGuest.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLoginAsGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginAsGuest.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLoginAsGuest.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLoginAsGuest.Location = new System.Drawing.Point(0, 128);
+            this.btnLoginAsGuest.Name = "btnLoginAsGuest";
+            this.btnLoginAsGuest.Size = new System.Drawing.Size(152, 50);
+            this.btnLoginAsGuest.TabIndex = 10;
+            this.btnLoginAsGuest.Text = "Войти как гость";
+            this.btnLoginAsGuest.UseVisualStyleBackColor = false;
+            this.btnLoginAsGuest.Click += new System.EventHandler(this.btnLoginAsGuest_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 194);
+            this.ClientSize = new System.Drawing.Size(549, 228);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBar);
@@ -268,6 +285,7 @@ namespace PharmacyForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnLoginAsGuest;
     }
 }
 
