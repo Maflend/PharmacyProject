@@ -34,12 +34,17 @@ namespace PharmacyForms.Forms
             if (tb.Name == "tbLogin")
             {
                 lblValidLogin.Text = "";
+
                 if (!isValid(tbLogin.Text, FieldsError.Логин, out string ErrorMessageLogin1))
                 {
                     lblValidLogin.Text = ErrorMessageLogin1;
                     validLog = false;
                 }
-                validLog = true;
+                else
+                {
+                    validLog = true;
+                }
+                
             }
             if (tb.Name == "tbPassword")
             {
@@ -49,7 +54,11 @@ namespace PharmacyForms.Forms
                     lblValidPassword.Text = ErrorMessagePassword1;
                     validPass = false;
                 }
-                validPass = true;
+                else
+                {
+                    validPass = true;
+                }
+               
             }
         }
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -108,10 +117,10 @@ namespace PharmacyForms.Forms
             {
                 if (field == FieldsError.Пароль)
                 {
-                    var hasMiniMaxChars = new Regex(@".{8,20}");
-                    if (!hasMiniMaxChars.IsMatch(input))
+                    
+                    if(!(input.Length >= 8 && input.Length <= 25))
                     {
-                        ErrorMessage = field + " должен содержать от 8 до 20 символов";
+                        ErrorMessage = field + " должен содержать от 8 до 25 символов";
                         return false;
                     }
                     else if (!hasNumber.IsMatch(input))
@@ -122,10 +131,10 @@ namespace PharmacyForms.Forms
                 }
                 if (field == FieldsError.Логин)
                 {
-                    var hasMiniMaxChars = new Regex(@".{8,25}");
-                    if (!hasMiniMaxChars.IsMatch(input))
+                   
+                    if (!(input.Length >= 4 && input.Length <= 15))
                     {
-                        ErrorMessage = field + " должен содержать от 8 до 25 символов";
+                        ErrorMessage = field + " должен содержать от 4 до 15 символов";
                         return false;
                     }
                 }
