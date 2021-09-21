@@ -18,8 +18,7 @@ namespace PharmacyForms
 {
     public partial class StartForm : Form
     {
-        private bool validLog;
-        private bool validPass;
+    
         private Form parentsForm;
         private User LogInUser;
         public StartForm()
@@ -39,7 +38,7 @@ namespace PharmacyForms
         {
             UserController userController = new UserController();
             var u = userController.Login(tbLogin.Text, tbPassword.Text);
-            if (u != null) // Переход на соответствующие формы
+            if (u != null && u.Login == tbLogin.Text && u.Password == tbPassword.Text) 
             {
                 LogInUser = u;
                 this.Close();
@@ -50,6 +49,8 @@ namespace PharmacyForms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            tbLogin.Text = "";
+            tbPassword.Text = "";
             SignUpForm form = new SignUpForm(this);
             form.ShowDialog();
         }
