@@ -14,9 +14,17 @@ namespace PharmacyForms.Models
         Director,
         Admin
     }
-    public enum Field
+    public enum FieldsError
     {
         Логин,
         Пароль
+    }
+    public enum Categories
+    {
+        Жаропонижающие,
+        Болеутоляющие,
+        Противовирусные,
+        Антибиотики,
+        Витамины
     }
 }

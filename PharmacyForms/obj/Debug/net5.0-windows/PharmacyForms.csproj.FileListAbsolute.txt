@@ -43,7 +43,6 @@ C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\bin\Debug\net5.0-win
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.csproj.AssemblyReference.cache
-C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Form1.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.csproj.GenerateResource.cache
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.AssemblyInfoInputs.cache
@@ -55,4 +54,8 @@ C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-win
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.pdb
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.genruntimeconfig.cache
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.StartForm.resources
-C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.SignUpForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Properties.Resources.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.ProductForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.ProfileForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.MenuForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.SignUpForm.resources

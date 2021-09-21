@@ -13,8 +13,8 @@ namespace PharmacyForms
         PharmacyContext db = new PharmacyContext();
         public void Add()
         {
-            Category category1 = new Category() { Name = "Обезбливающее" };
-            Category category2 = new Category() { Name = "Жаропонижающее" };
+            Category category1 = new Category() { Categories = Categories.Болеутоляющие };
+            Category category2 = new Category() { Categories = Categories.Жаропонижающие };
             db.Categories.AddRange(category1, category2);
 
             User user1 = new User() { Login = "MaximSolnce", Password = "Top123123", Role = Roles.Client };

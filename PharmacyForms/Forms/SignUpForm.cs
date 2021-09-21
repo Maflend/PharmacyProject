@@ -12,23 +12,29 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmacyForms
+namespace PharmacyForms.Forms
 {
     public partial class SignUpForm : Form
     {
+        private  Form parentForm;
         private bool validLog;
         private bool validPass;
         public SignUpForm()
         {
             InitializeComponent();
-        }    
+        }
+        public SignUpForm(Form form)
+        {
+            InitializeComponent();
+            parentForm = form;
+        }
         private void tbTextChanged(object sender, EventArgs e) //Можно подумать как избавиться от дуближа
         {
             var tb = sender as TextBox;
             if (tb.Name == "tbLogin")
             {
                 lblValidLogin.Text = "";
-                if (!isValid(tbLogin.Text, Field.Логин, out string ErrorMessageLogin1))
+                if (!isValid(tbLogin.Text, FieldsError.Логин, out string ErrorMessageLogin1))
                 {
                     lblValidLogin.Text = ErrorMessageLogin1;
                     validLog = false;
@@ -38,7 +44,7 @@ namespace PharmacyForms
             if (tb.Name == "tbPassword")
             {
                 lblValidPassword.Text = "";
-                if (!isValid(tbPassword.Text, Field.Пароль, out string ErrorMessagePassword1))
+                if (!isValid(tbPassword.Text, FieldsError.Пароль, out string ErrorMessagePassword1))
                 {
                     lblValidPassword.Text = ErrorMessagePassword1;
                     validPass = false;
@@ -60,6 +66,7 @@ namespace PharmacyForms
                     newUser.Role = Roles.Client;
                     userController.Post(newUser);
                     MessageBox.Show("Вы зарегистрированы!");
+                    this.Close();
                 }
                 else
                 {
@@ -68,7 +75,7 @@ namespace PharmacyForms
             }
         }
        
-        private bool isValid(string text, Field field, out string ErrorMessage)
+        private bool isValid(string text, FieldsError field, out string ErrorMessage)
         {
             var input = text;
             ErrorMessage = string.Empty;
@@ -99,7 +106,7 @@ namespace PharmacyForms
             }
             else
             {
-                if (field == Field.Пароль)
+                if (field == FieldsError.Пароль)
                 {
                     var hasMiniMaxChars = new Regex(@".{8,20}");
                     if (!hasMiniMaxChars.IsMatch(input))
@@ -113,7 +120,7 @@ namespace PharmacyForms
                         return false;
                     }
                 }
-                if (field == Field.Логин)
+                if (field == FieldsError.Логин)
                 {
                     var hasMiniMaxChars = new Regex(@".{8,25}");
                     if (!hasMiniMaxChars.IsMatch(input))
@@ -129,10 +136,24 @@ namespace PharmacyForms
 
         private void SignUp_Load(object sender, EventArgs e)
         {
+            parentForm.Hide();
             lblValidLogin.Text = "";
             lblValidPassword.Text = "";
         }
 
-      
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SignUpForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
+        }
     }
 }
