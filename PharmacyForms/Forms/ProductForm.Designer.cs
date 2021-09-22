@@ -29,78 +29,110 @@ namespace PharmacyForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.panelDataGrid = new System.Windows.Forms.Panel();
             this.panelActionBar = new System.Windows.Forms.Panel();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.btnAddproduct = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            this.panelDataGrid.SuspendLayout();
+            this.tbFindName = new System.Windows.Forms.TextBox();
             this.panelActionBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvProduct
-            // 
-            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProduct.Location = new System.Drawing.Point(5, 5);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.RowTemplate.Height = 25;
-            this.dgvProduct.Size = new System.Drawing.Size(694, 405);
-            this.dgvProduct.TabIndex = 0;
-            // 
-            // panelDataGrid
-            // 
-            this.panelDataGrid.Controls.Add(this.dgvProduct);
-            this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDataGrid.Location = new System.Drawing.Point(0, 119);
-            this.panelDataGrid.Name = "panelDataGrid";
-            this.panelDataGrid.Padding = new System.Windows.Forms.Padding(5);
-            this.panelDataGrid.Size = new System.Drawing.Size(704, 415);
-            this.panelDataGrid.TabIndex = 1;
             // 
             // panelActionBar
             // 
+            this.panelActionBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelActionBar.Controls.Add(this.tbFindName);
             this.panelActionBar.Controls.Add(this.label1);
-            this.panelActionBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelActionBar.Controls.Add(this.btnSearch);
+            this.panelActionBar.Controls.Add(this.btnAddproduct);
             this.panelActionBar.Location = new System.Drawing.Point(0, 0);
             this.panelActionBar.Name = "panelActionBar";
             this.panelActionBar.Size = new System.Drawing.Size(704, 119);
             this.panelActionBar.TabIndex = 2;
             // 
+            // dgvProduct
+            // 
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(10, 125);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.RowTemplate.Height = 25;
+            this.dgvProduct.Size = new System.Drawing.Size(682, 397);
+            this.dgvProduct.TabIndex = 0;
+            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            // 
+            // btnAddproduct
+            // 
+            this.btnAddproduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnAddproduct.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddproduct.Location = new System.Drawing.Point(519, 10);
+            this.btnAddproduct.Name = "btnAddproduct";
+            this.btnAddproduct.Size = new System.Drawing.Size(182, 51);
+            this.btnAddproduct.TabIndex = 0;
+            this.btnAddproduct.Text = "Добавить товар";
+            this.btnAddproduct.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(331, 10);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(182, 51);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Найти";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(327, 46);
+            this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Введите название лекарства";
+            // 
+            // tbFindName
+            // 
+            this.tbFindName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbFindName.Location = new System.Drawing.Point(10, 27);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(240, 34);
+            this.tbFindName.TabIndex = 2;
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 534);
+            this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.panelActionBar);
-            this.Controls.Add(this.panelDataGrid);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            this.panelDataGrid.ResumeLayout(false);
             this.panelActionBar.ResumeLayout(false);
             this.panelActionBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.Panel panelActionBar;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.Button btnAddproduct;
+        private System.Windows.Forms.TextBox tbFindName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

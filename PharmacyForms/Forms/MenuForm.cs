@@ -31,8 +31,8 @@ namespace PharmacyForms.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-            //AddItemsInDataBase add = new AddItemsInDataBase();
-            //add.Add();
+          // AddItemsInDataBase add = new AddItemsInDataBase();
+           // add.Add();
             // ...
             startForm = new StartForm(this);
             SetName();
@@ -112,8 +112,9 @@ namespace PharmacyForms.Forms
         private void btnProfile_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            OpenChildForm(new ProfileForm(), sender);
-            ActivateButton(sender);
+            ProfileForm profileForm = new ProfileForm();
+            OpenChildForm(profileForm, sender);
+            ActivateButton(sender);       
         }
 
         public void hideSubMenu()
@@ -135,7 +136,6 @@ namespace PharmacyForms.Forms
        
         private static void SetName()
         {
-            //StartForm startForm = 
             startForm.ShowDialog();
             User user = new User();
             currentUser = startForm.GetUser();
@@ -145,9 +145,15 @@ namespace PharmacyForms.Forms
         private void btnOpenProductForm_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            var buttonCategory = button.Text;
-            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategory);
+            var buttonCategoryName = button.Text;
+            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
             OpenChildForm(new ProductForm(currentUser.Role, category), sender);
+        }
+
+        private void btnChangeUser_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
         }
     }
 }

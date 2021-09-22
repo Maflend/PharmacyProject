@@ -44,6 +44,7 @@ namespace PharmacyForms.Forms
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblUserLogin = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnChangeUser = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelCategories.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -53,6 +54,7 @@ namespace PharmacyForms.Forms
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnChangeUser);
             this.panelMenu.Controls.Add(this.btnShoppingCart);
             this.panelMenu.Controls.Add(this.btnProfile);
             this.panelMenu.Controls.Add(this.panelCategories);
@@ -265,6 +267,23 @@ namespace PharmacyForms.Forms
             this.panelDesktop.Size = new System.Drawing.Size(720, 573);
             this.panelDesktop.TabIndex = 2;
             // 
+            // btnChangeUser
+            // 
+            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangeUser.FlatAppearance.BorderSize = 0;
+            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
+            this.btnChangeUser.Name = "btnChangeUser";
+            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
+            this.btnChangeUser.TabIndex = 6;
+            this.btnChangeUser.Text = "Сменить пользователя";
+            this.btnChangeUser.UseVisualStyleBackColor = false;
+            this.btnChangeUser.Click += new System.EventHandler(this.btnChangeUser_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -273,6 +292,7 @@ namespace PharmacyForms.Forms
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.MinimumSize = new System.Drawing.Size(956, 692);
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";
@@ -304,5 +324,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Button btnVitamins;
         private System.Windows.Forms.Button btnAntibiotics;
         private System.Windows.Forms.Button btnAntiviralAgent;
+        private System.Windows.Forms.Button btnChangeUser;
     }
 }
