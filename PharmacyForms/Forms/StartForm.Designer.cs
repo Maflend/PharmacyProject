@@ -37,6 +37,7 @@ namespace PharmacyForms
             this.lblValidPassword = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelBar = new System.Windows.Forms.Panel();
+            this.btnLoginAsGuest = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@ namespace PharmacyForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnLoginAsGuest = new System.Windows.Forms.Button();
             this.panelBar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -146,6 +146,21 @@ namespace PharmacyForms
             this.panelBar.Size = new System.Drawing.Size(152, 228);
             this.panelBar.TabIndex = 15;
             // 
+            // btnLoginAsGuest
+            // 
+            this.btnLoginAsGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLoginAsGuest.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLoginAsGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginAsGuest.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLoginAsGuest.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLoginAsGuest.Location = new System.Drawing.Point(0, 128);
+            this.btnLoginAsGuest.Name = "btnLoginAsGuest";
+            this.btnLoginAsGuest.Size = new System.Drawing.Size(152, 50);
+            this.btnLoginAsGuest.TabIndex = 10;
+            this.btnLoginAsGuest.Text = "Войти как гость";
+            this.btnLoginAsGuest.UseVisualStyleBackColor = false;
+            this.btnLoginAsGuest.Click += new System.EventHandler(this.btnLoginAsGuest_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -225,21 +240,6 @@ namespace PharmacyForms
             this.label3.Size = new System.Drawing.Size(186, 28);
             this.label3.TabIndex = 18;
             this.label3.Text = "Окно авторизации";
-            // 
-            // btnLoginAsGuest
-            // 
-            this.btnLoginAsGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnLoginAsGuest.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLoginAsGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoginAsGuest.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLoginAsGuest.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnLoginAsGuest.Location = new System.Drawing.Point(0, 128);
-            this.btnLoginAsGuest.Name = "btnLoginAsGuest";
-            this.btnLoginAsGuest.Size = new System.Drawing.Size(152, 50);
-            this.btnLoginAsGuest.TabIndex = 10;
-            this.btnLoginAsGuest.Text = "Войти как гость";
-            this.btnLoginAsGuest.UseVisualStyleBackColor = false;
-            this.btnLoginAsGuest.Click += new System.EventHandler(this.btnLoginAsGuest_Click);
             // 
             // StartForm
             // 

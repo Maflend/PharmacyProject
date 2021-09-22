@@ -12,11 +12,12 @@ namespace PharmacyForms.Forms
 {
     public partial class ProfileForm : Form
     {
+
         public ProfileForm()
         {
             InitializeComponent();
         }
-
+       
         private void ProfileForm_Load(object sender, EventArgs e)
         {
 

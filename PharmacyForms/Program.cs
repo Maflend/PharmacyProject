@@ -18,7 +18,13 @@ namespace PharmacyForms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            MenuForm menuForm = new MenuForm();
+            Application.Run(menuForm);
+            while(menuForm.DialogResult == DialogResult.Retry)
+            {
+                menuForm = new MenuForm();
+                Application.Run(menuForm);
+            }
         }
     }
 }
