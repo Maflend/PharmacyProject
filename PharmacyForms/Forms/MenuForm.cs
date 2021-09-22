@@ -31,8 +31,8 @@ namespace PharmacyForms.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-            //AddItemsInDataBase add = new AddItemsInDataBase();
-            //add.Add();
+           // AddItemsInDataBase add = new AddItemsInDataBase();
+           // add.Add();
             // ...
             startForm = new StartForm(this);
             SetName();
@@ -145,8 +145,8 @@ namespace PharmacyForms.Forms
         private void btnOpenProductForm_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            var buttonCategory = button.Text;
-            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategory);
+            var buttonCategoryName = button.Text;
+            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
             OpenChildForm(new ProductForm(currentUser.Role, category), sender);
         }
     }

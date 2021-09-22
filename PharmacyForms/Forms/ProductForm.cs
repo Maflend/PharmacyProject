@@ -1,4 +1,5 @@
-﻿using PharmacyForms.Models;
+﻿using PharmacyForms.Controllers;
+using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,16 @@ namespace PharmacyForms
         private void Form1_Load(object sender, EventArgs e)
         {
             // ЗАПОЛНИТЬ dgvProduct при загрузке. Вывод определенных дополнительных столбцов таблицы для конкретной роли происходит засчет проверки Role. А категории - Category
-            label1.Text = currentCategory.ToString() + "    " + currentRole.ToString();
+            // label1.Text = currentCategory.ToString() + "    " + currentRole.ToString();
+
+            // Пример получения продуктов конкретной категории.
+            ProductController prod = new ProductController();
+            var p = prod.GetByCategory(currentCategory);
+            label1.Text = "";
+            foreach (var i in p)
+            {
+                label1.Text += i.Name + ";";
+            }
         }
     }
 }
