@@ -30,6 +30,7 @@ namespace PharmacyForms.Forms
                 Sale sale = new Sale() { Product = currentProduct, Quantity = quantity };
                 SaleStatic.Sales.Add(sale);
             }
+            this.DialogResult = DialogResult.Retry;
         }
 
         private void PurchaseForm_Load(object sender, EventArgs e)
