@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhamacyLibrary.Models
+namespace PharmacyForms.Models
 {
     public class Order
     {
         [Key] public int Id { get; set; }
         [Required] public DateTime DateSale { get; set; }
-        public virtual User User { get; set; }
-        public List<Product> Products { get; set; }
+        [Required] public virtual User User { get; set; }
+        [Required] public List<Sale> Sales { get; set; }
 
     }
 }

@@ -1,7 +1,6 @@
-﻿using PhamacyLibrary.Models;
+﻿using PharmacyForms.Models;
 using PharmacyForms.Controllers;
 using PharmacyForms.Forms;
-using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +17,7 @@ namespace PharmacyForms
     {
         private Categories currentCategory;
         private Roles currentRole;
+        public List<Sale> Sales = new List<Sale>();
         public ProductForm()
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace PharmacyForms
         {
             dgvProduct.AllowUserToAddRows = false;
             SetDataGrid();
-           
             DataGridViewButtonColumn buttonPay = new DataGridViewButtonColumn();
             DataGridViewButtonColumn buttonDelete = new DataGridViewButtonColumn();
             DataGridViewButtonColumn buttonUpdate = new DataGridViewButtonColumn();
@@ -70,35 +69,63 @@ namespace PharmacyForms
             dgvProduct.Columns["PurchasingPrice"].Visible = false;
             if (currentRole == Roles.Director)
             {
-                dgvProduct.Columns["PurchasingPrice"].Visible = false;
+                dgvProduct.Columns["PurchasingPrice"].Visible = true;
             }   
         }
-        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)  // ОЧЕНЬ КРИВО НО РАБОТАЕТ
+      
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id=0; string name = null; string desc=null; int quant=0; double retailPrice=0; double publPrice=0;
+            if(currentRole == Roles.Client)
+            {
+                 id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
+                 name = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+                 desc = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                 quant = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString());
+                 retailPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString());
+                 publPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
+            }
+            if(currentRole == Roles.Stuff || currentRole == Roles.Director || currentRole == Roles.Admin)
+            {
+                id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
+                name = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                desc = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                quant = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
+                retailPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
+                publPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
+            }
+            if(currentRole == Roles.Guest)
+            {
+                MessageBox.Show("Для покупки товара вам нужно зарегистрироваться. Смените пользователя для регистрации.");
+            }
             Product currentProduct = new Product();
-            currentProduct.Id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
-            currentProduct.Name = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-            currentProduct.Description = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-            currentProduct.Quantity = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
-            currentProduct.PurchasingPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
-            currentProduct.RetailPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
+            currentProduct.Id = id;
+            currentProduct.Name = name;
+            currentProduct.Description = desc;
+            currentProduct.Quantity = quant;
+            currentProduct.PurchasingPrice = publPrice;
+            currentProduct.RetailPrice = retailPrice;
 
             ProductController controller = new ProductController();
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay") // Cells[0]
+            if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
             {
-                MessageBox.Show("Вы купили этот товар: " + dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString());
+                Product payProduct = controller.GetById(id);
+                if (payProduct != null)
+                {
+                    PurchaseForm purchaseForm = new PurchaseForm(payProduct);
+                    purchaseForm.ShowDialog();
+                }
             }
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete") // Cells[1]
+            if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete")
             {
                 if (MessageBox.Show("Подтвердите удаление записи","Подтверждение",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-                    bool isDelete = controller.Delete(Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString()));
+                    bool isDelete = controller.Delete(id);
                     if (isDelete)
                         MessageBox.Show("Удалено");
                 }
-               
             }
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Update") // Cells[2]
+            if (dgvProduct.Columns[e.ColumnIndex].Name == "Update")
             {
                 UpdateProductForm upProductForm = new UpdateProductForm(currentProduct);
                 if (upProductForm.ShowDialog() == DialogResult.OK)

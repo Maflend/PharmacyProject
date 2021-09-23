@@ -30,6 +30,7 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnChangeUser = new System.Windows.Forms.Button();
             this.btnShoppingCart = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panelCategories = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@ namespace PharmacyForms.Forms
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblUserLogin = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnChangeUser = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelCategories.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -65,6 +65,23 @@ namespace PharmacyForms.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 653);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnChangeUser
+            // 
+            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangeUser.FlatAppearance.BorderSize = 0;
+            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
+            this.btnChangeUser.Name = "btnChangeUser";
+            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
+            this.btnChangeUser.TabIndex = 6;
+            this.btnChangeUser.Text = "Сменить пользователя";
+            this.btnChangeUser.UseVisualStyleBackColor = false;
+            this.btnChangeUser.Click += new System.EventHandler(this.btnChangeUser_Click);
             // 
             // btnShoppingCart
             // 
@@ -266,23 +283,6 @@ namespace PharmacyForms.Forms
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(720, 573);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // btnChangeUser
-            // 
-            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnChangeUser.FlatAppearance.BorderSize = 0;
-            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
-            this.btnChangeUser.Name = "btnChangeUser";
-            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
-            this.btnChangeUser.TabIndex = 6;
-            this.btnChangeUser.Text = "Сменить пользователя";
-            this.btnChangeUser.UseVisualStyleBackColor = false;
-            this.btnChangeUser.Click += new System.EventHandler(this.btnChangeUser_Click);
             // 
             // MenuForm
             // 

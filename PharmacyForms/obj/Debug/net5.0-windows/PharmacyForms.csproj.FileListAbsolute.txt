@@ -60,3 +60,5 @@ C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-win
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.SignUpForm.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.csproj.AssemblyReference.cache
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.UpdateProductForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.CartForm.resources
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.PurchaseForm.resources

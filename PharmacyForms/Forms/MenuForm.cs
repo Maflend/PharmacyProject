@@ -1,6 +1,5 @@
-﻿using PhamacyLibrary.Models;
+﻿using PharmacyForms.Models;
 using PharmacyForms.Forms;
-using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +30,7 @@ namespace PharmacyForms.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-          // AddItemsInDataBase add = new AddItemsInDataBase();
+          //  AddItemsInDataBase add = new AddItemsInDataBase();
            // add.Add();
             // ...
             startForm = new StartForm(this);
@@ -45,7 +44,6 @@ namespace PharmacyForms.Forms
             {
                 activeForm.Close();
             }
-           // ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -100,12 +98,14 @@ namespace PharmacyForms.Forms
         {
             showSubMenu(panelCategories);
             ActivateButton(sender);
-
         }
-
+        ProductForm ProductForm;
+        private static List<Sale> Sales = new List<Sale>();
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            CartForm cartForm = new CartForm();
+            OpenChildForm(cartForm, sender);
             ActivateButton(sender);
         }
 
@@ -116,7 +116,28 @@ namespace PharmacyForms.Forms
             OpenChildForm(profileForm, sender);
             ActivateButton(sender);       
         }
+       
+        private static void SetName()
+        {
+            startForm.ShowDialog();
+            User user = new User();
+            currentUser = startForm.GetUser();
+        }
 
+        private void btnOpenProductForm_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var buttonCategoryName = button.Text;
+            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
+           
+            ProductForm = new ProductForm(currentUser.Role, category);
+            OpenChildForm(ProductForm, sender);
+        }
+        private void btnChangeUser_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
+        }
         public void hideSubMenu()
         {
             if (panelCategories.Visible == true)
@@ -132,28 +153,6 @@ namespace PharmacyForms.Forms
             else
                 subMenu.Visible = false;
         }
- 
-       
-        private static void SetName()
-        {
-            startForm.ShowDialog();
-            User user = new User();
-            currentUser = startForm.GetUser();
-            
-        }
 
-        private void btnOpenProductForm_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            var buttonCategoryName = button.Text;
-            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
-            OpenChildForm(new ProductForm(currentUser.Role, category), sender);
-        }
-
-        private void btnChangeUser_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Retry;
-            this.Close();
-        }
     }
 }

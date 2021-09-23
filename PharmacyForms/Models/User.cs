@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace PhamacyLibrary.Models
+namespace PharmacyForms.Models
 {
     public class User
     {
