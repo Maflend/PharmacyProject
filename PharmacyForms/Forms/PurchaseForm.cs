@@ -27,8 +27,10 @@ namespace PharmacyForms.Forms
         {
             if (int.TryParse(tbQuantity.Text, out int quantity))
             {
-                Sale sale = new Sale() { Product = currentProduct, Quantity = quantity };
-                SaleStatic.Sales.Add(sale);
+                Product product = ContextStatic.PharmacyContext.Products.FirstOrDefault(i => i.Id == currentProduct.Id);
+                Sale sale = new Sale() { Product = product, Quantity = quantity };
+                ContextStatic.PharmacyContext.Sales.Add(sale);
+               SaleStatic.Sales.Add(sale);
             }
             this.DialogResult = DialogResult.Retry;
         }

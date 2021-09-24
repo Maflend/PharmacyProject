@@ -18,7 +18,6 @@ namespace PharmacyForms.Forms
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        private static User currentUser;
 
         static StartForm startForm;
         public MenuForm()
@@ -34,9 +33,9 @@ namespace PharmacyForms.Forms
            // add.Add();
             // ...
             startForm = new StartForm(this);
-            SetName();
-            if (currentUser != null)
-                lblUserLogin.Text = currentUser.Login;
+            startForm.ShowDialog();
+            if (CurrentUserStatic.Login != null)
+                lblUserLogin.Text = CurrentUserStatic.Login;
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -99,8 +98,6 @@ namespace PharmacyForms.Forms
             showSubMenu(panelCategories);
             ActivateButton(sender);
         }
-        ProductForm ProductForm;
-        private static List<Sale> Sales = new List<Sale>();
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -115,23 +112,13 @@ namespace PharmacyForms.Forms
             ProfileForm profileForm = new ProfileForm();
             OpenChildForm(profileForm, sender);
             ActivateButton(sender);       
-        }
-       
-        private static void SetName()
-        {
-            startForm.ShowDialog();
-            User user = new User();
-            currentUser = startForm.GetUser();
-        }
-
+        }   
         private void btnOpenProductForm_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             var buttonCategoryName = button.Text;
             Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
-           
-            ProductForm = new ProductForm(currentUser.Role, category);
-            OpenChildForm(ProductForm, sender);
+            OpenChildForm( new ProductForm(CurrentUserStatic.Role, category), sender);
         }
         private void btnChangeUser_Click(object sender, EventArgs e)
         {
