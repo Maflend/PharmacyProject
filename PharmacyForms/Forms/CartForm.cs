@@ -32,7 +32,7 @@ namespace PharmacyForms.Forms
                     OrderController controller = new OrderController();
                     if (controller.Post(order))
                     {
-                        SaleStatic.Sales = null;
+                        SaleStatic.Sales = new List<Sale>();
                         MessageBox.Show("Продукт куплен");
                         SetData();
                     }

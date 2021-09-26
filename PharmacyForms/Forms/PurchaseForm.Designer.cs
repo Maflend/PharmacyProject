@@ -96,7 +96,7 @@ namespace PharmacyForms.Forms
             this.Controls.Add(this.label1);
             this.Name = "PurchaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PurchaseForm";
+            this.Text = "Покупка товара";
             this.Load += new System.EventHandler(this.PurchaseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

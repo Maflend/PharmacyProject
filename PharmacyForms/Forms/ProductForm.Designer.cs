@@ -30,11 +30,11 @@ namespace PharmacyForms
         private void InitializeComponent()
         {
             this.panelActionBar = new System.Windows.Forms.Panel();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.btnAddproduct = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbFindName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAddproduct = new System.Windows.Forms.Button();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.panelActionBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -53,32 +53,22 @@ namespace PharmacyForms
             this.panelActionBar.Size = new System.Drawing.Size(704, 119);
             this.panelActionBar.TabIndex = 2;
             // 
-            // dgvProduct
+            // tbFindName
             // 
-            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(10, 125);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.RowTemplate.Height = 25;
-            this.dgvProduct.Size = new System.Drawing.Size(682, 397);
-            this.dgvProduct.TabIndex = 0;
-            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            this.tbFindName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbFindName.Location = new System.Drawing.Point(10, 27);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(240, 34);
+            this.tbFindName.TabIndex = 2;
             // 
-            // btnAddproduct
+            // label1
             // 
-            this.btnAddproduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnAddproduct.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddproduct.Location = new System.Drawing.Point(519, 10);
-            this.btnAddproduct.Name = "btnAddproduct";
-            this.btnAddproduct.Size = new System.Drawing.Size(182, 51);
-            this.btnAddproduct.TabIndex = 0;
-            this.btnAddproduct.Text = "Добавить товар";
-            this.btnAddproduct.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Введите название лекарства";
             // 
             // btnSearch
             // 
@@ -92,22 +82,33 @@ namespace PharmacyForms
             this.btnSearch.Text = "Найти";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // btnAddproduct
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Введите название лекарства";
+            this.btnAddproduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnAddproduct.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddproduct.Location = new System.Drawing.Point(519, 10);
+            this.btnAddproduct.Name = "btnAddproduct";
+            this.btnAddproduct.Size = new System.Drawing.Size(182, 51);
+            this.btnAddproduct.TabIndex = 0;
+            this.btnAddproduct.Text = "Добавить товар";
+            this.btnAddproduct.UseVisualStyleBackColor = false;
             // 
-            // tbFindName
+            // dgvProduct
             // 
-            this.tbFindName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbFindName.Location = new System.Drawing.Point(10, 27);
-            this.tbFindName.Name = "tbFindName";
-            this.tbFindName.Size = new System.Drawing.Size(240, 34);
-            this.tbFindName.TabIndex = 2;
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(10, 125);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.RowTemplate.Height = 25;
+            this.dgvProduct.Size = new System.Drawing.Size(682, 397);
+            this.dgvProduct.TabIndex = 0;
+            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
             // ProductForm
             // 

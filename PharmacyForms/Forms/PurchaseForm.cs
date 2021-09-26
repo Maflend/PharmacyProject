@@ -13,7 +13,7 @@ namespace PharmacyForms.Forms
 {
     public partial class PurchaseForm : Form
     {
-        private Product currentProduct;
+        private static Product currentProduct;
         public PurchaseForm()
         {
             InitializeComponent();
@@ -21,22 +21,53 @@ namespace PharmacyForms.Forms
         public PurchaseForm(Product product)
         {
             InitializeComponent();
-            currentProduct = product;
+            currentProduct = ContextStatic.PharmacyContext.Products.FirstOrDefault(i => i.Id == product.Id);
         }
+       
         private void btnBuy_Click(object sender, EventArgs e)
         {
+
+
             if (int.TryParse(tbQuantity.Text, out int quantity))
             {
-                Product product = ContextStatic.PharmacyContext.Products.FirstOrDefault(i => i.Id == currentProduct.Id);
-                Sale sale = new Sale() { Product = product, Quantity = quantity };
-                ContextStatic.PharmacyContext.Sales.Add(sale);
-               SaleStatic.Sales.Add(sale);
+                if (quantity <= currentProduct.Quantity )
+                {
+                    if(SaleStatic.Sales != null && SaleStatic.Sales.Any(s=>s.Product == currentProduct))
+                    {
+                        for(int i=0; i<SaleStatic.Sales.Count();i++)
+                        {
+                            if(SaleStatic.Sales[i].Product.Id == currentProduct.Id)
+                            {
+                                SaleStatic.Sales[i].Quantity = quantity;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Sale sale = new Sale() { Product = currentProduct, Quantity = quantity };
+                        //ContextStatic.PharmacyContext.Sales.Add(sale);
+                        SaleStatic.Sales.Add(sale);
+                    }
+
+                   
+                    this.DialogResult = DialogResult.Retry;
+                }
+                else
+                {
+                    MessageBox.Show($"Вы не можете купить товар в таком количестве. К покупке доступно: {currentProduct.Quantity} шт.");               
+                }
+                
             }
-            this.DialogResult = DialogResult.Retry;
+          
         }
 
         private void PurchaseForm_Load(object sender, EventArgs e)
         {
+            if(SaleStatic.Sales != null)
+            {
+                int tmp = SaleStatic.Sales.Where(s => s.Product.Id == currentProduct.Id).Sum(s => s.Quantity);
+                tbQuantity.Text = tmp.ToString();
+            }
             lblProductName.Text = currentProduct.Name;
         }
     }

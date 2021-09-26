@@ -9,7 +9,6 @@ namespace PharmacyForms.Controllers
 {
     public class OrderController
     {
-        PharmacyContext db = new PharmacyContext();
         public bool Post(Order order)
         {
             var user = ContextStatic.PharmacyContext.Users.FirstOrDefault(i => i.Id == CurrentUserStatic.Id);

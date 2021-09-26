@@ -29,17 +29,25 @@ namespace PharmacyForms.Forms
         {
             ProductController controller = new ProductController();
             Product product = new Product();
-            product.Id = currentProduct.Id;
-            product.Name = tbName.Text;
-            product.Quantity = Int32.Parse(tbQuantity.Text);
-            product.Description = tbDescription.Text;
-            product.RetailPrice = Int32.Parse(tbRetailPrice.Text);
-            product.PurchasingPrice = Int32.Parse(tbPurchasingPrice.Text);
-           
-            bool isUpdate = controller.Update(product);
-            if (isUpdate)
-                MessageBox.Show("Изменения успешно сохранены");
-            this.DialogResult = DialogResult.OK;
+            if(!string.IsNullOrWhiteSpace(tbName.Text) && !string.IsNullOrWhiteSpace(tbQuantity.Text) && !string.IsNullOrWhiteSpace(tbPurchasingPrice.Text) && !string.IsNullOrWhiteSpace(tbRetailPrice.Text))
+            {
+                product.Id = currentProduct.Id;
+                product.Name = tbName.Text;
+                product.Quantity = Int32.Parse(tbQuantity.Text);
+                product.Description = tbDescription.Text;
+                product.RetailPrice = Int32.Parse(tbRetailPrice.Text);
+                product.PurchasingPrice = Int32.Parse(tbPurchasingPrice.Text);
+
+                bool isUpdate = controller.Update(product);
+                if (isUpdate)
+                    MessageBox.Show("Изменения успешно сохранены");
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Поля кроме описания не должны быть пустыми.");
+            }
+            
         }
 
         private void UpdateProductForm_Load(object sender, EventArgs e)

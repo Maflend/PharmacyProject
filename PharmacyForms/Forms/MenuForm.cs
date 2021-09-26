@@ -24,7 +24,9 @@ namespace PharmacyForms.Forms
         {
             InitializeComponent();
             random = new Random();
-            panelCategories.Visible = false;          
+            panelCategories.Visible = false;
+            btnShowAdminMenu.Visible = false;
+            btnProfile.Visible = false;
         }
         private void MenuForm_Load(object sender, EventArgs e)
         {
@@ -34,8 +36,12 @@ namespace PharmacyForms.Forms
             // ...
             startForm = new StartForm(this);
             startForm.ShowDialog();
-            if (CurrentUserStatic.Login != null)
+            if (CurrentUserStatic.Login!= null)
                 lblUserLogin.Text = CurrentUserStatic.Login;
+            if(CurrentUserStatic.Role == Roles.Admin)
+            {
+                btnShowAdminMenu.Visible = true;
+            }
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -97,6 +103,9 @@ namespace PharmacyForms.Forms
         {
             showSubMenu(panelCategories);
             ActivateButton(sender);
+            if(activeForm!= null)
+                activeForm.Close();
+            panelDesktop.Controls.Add(panelCenterLogo);
         }
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
@@ -141,5 +150,11 @@ namespace PharmacyForms.Forms
                 subMenu.Visible = false;
         }
 
+        private void btnShowAdminMenu_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new UserControlForm(),sender);
+            ActivateButton(sender);
+        }
     }
 }

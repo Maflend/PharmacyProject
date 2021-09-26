@@ -67,5 +67,18 @@ namespace PharmacyForms.Controllers
             return false;
             
         }
+        public bool Update(User user)
+        {
+            var currentuser = db.Users.FirstOrDefault(u=>u.Id == user.Id);
+            if(currentuser != null)
+            {
+                currentuser.Login = user.Login;
+                currentuser.Role = user.Role;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+           
+        }
     }
 }

@@ -54,7 +54,8 @@ namespace PharmacyForms
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            SaleStatic.Sales.Clear();
+            if(SaleStatic.Sales != null)
+                SaleStatic.Sales.Clear();
             lblValidLogin.Text = "";
             lblValidPassword.Text = "";
         }
