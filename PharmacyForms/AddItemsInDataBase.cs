@@ -1,5 +1,4 @@
-﻿using PhamacyLibrary.Models;
-using PharmacyForms.Models;
+﻿using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,7 @@ namespace PharmacyForms
         PharmacyContext db = new PharmacyContext();
         public void Add()
         {
+           
             Category category1 = new Category() { Categories = Categories.Болеутоляющие };
             Category category2 = new Category() { Categories = Categories.Жаропонижающие };
             Category category3 = new Category() { Categories = Categories.Витамины};
@@ -29,33 +29,33 @@ namespace PharmacyForms
             User userA = new User() { Login = "Admin", Password = "Admin", Role = Roles.Admin };
             db.Users.AddRange(user1, user2,user3 ,user4,user5,user6,userA);
 
-            Order order1 = new Order() { DateSale = new DateTime(2015, 7, 20), User = user1 };
-            Order order2 = new Order() { DateSale = new DateTime(2016, 12, 11),User = user2 };
-            db.Orders.AddRange(order1, order2);
            
-            Product product11 = new Product() 
-            { Name = "Анальгин", Description = "Обезболивающее сильное", PurchasingPrice = 200, RetailPrice = 150, Quantity = 10, Category = category1, Orders = new List<Order>() { order1 } };
-            Product product12 = new Product() 
-            { Name = "Некст", Description = "Обезболивающее сильное", PurchasingPrice = 300, RetailPrice = 200, Quantity = 15, Category = category1, Orders = new List<Order>() { order1 } };
-            Product product13 = new Product() 
-            { Name = "Брал", Description = "Обезболивающее сильное", PurchasingPrice = 350, RetailPrice = 220, Quantity = 16, Category = category1, Orders = new List<Order>() { order1 } };
+
+          
+
+            Product product11 = new Product()
+            { Name = "Анальгин", Description = "Обезболивающее сильное", PurchasingPrice = 200, RetailPrice = 150, Quantity = 10, Category = category1 };
+            Product product12 = new Product()
+            { Name = "Некст", Description = "Обезболивающее сильное", PurchasingPrice = 300, RetailPrice = 200, Quantity = 15, Category = category1};
+            Product product13 = new Product()
+            { Name = "Брал", Description = "Обезболивающее сильное", PurchasingPrice = 350, RetailPrice = 220, Quantity = 16, Category = category1 };
             Product product14 = new Product()
-            { Name = "Тералив", Description = "Обезболивающее сильное", PurchasingPrice = 440, RetailPrice = 275, Quantity = 66, Category = category1};
+            { Name = "Тералив", Description = "Обезболивающее сильное", PurchasingPrice = 440, RetailPrice = 275, Quantity = 66, Category = category1 };
             Product product15 = new Product()
-            { Name = "Нурофен", Description = "Таблетки", PurchasingPrice = 280, RetailPrice = 210, Quantity = 55, Category = category1};
+            { Name = "Нурофен", Description = "Таблетки", PurchasingPrice = 280, RetailPrice = 210, Quantity = 55, Category = category1 };
             Product product16 = new Product()
-            { Name = "Артрозилен", Description = "Гель", PurchasingPrice = 500, RetailPrice = 420, Quantity = 43, Category = category1};
+            { Name = "Артрозилен", Description = "Гель", PurchasingPrice = 500, RetailPrice = 420, Quantity = 43, Category = category1 };
             Product product17 = new Product()
-            { Name = "Ихтиол суппозитории", Description = "200 мг 10 шт", PurchasingPrice = 720, RetailPrice = 530, Quantity = 88, Category = category1};
+            { Name = "Ихтиол суппозитории", Description = "200 мг 10 шт", PurchasingPrice = 720, RetailPrice = 530, Quantity = 88, Category = category1 };
             Product product18 = new Product()
             { Name = "Аленталь", Description = "таблетки 100 мг 20 шт", PurchasingPrice = 744, RetailPrice = 570, Quantity = 48, Category = category1 };
-            Product product21 = new Product() 
+            Product product21 = new Product()
             // ...
-            { Name = "Парацетамол", Description = "Жаропонижующее", PurchasingPrice = 400, RetailPrice = 220, Quantity = 53, Category = category2, Orders = new List<Order>() { order2 } };
-            Product product22 = new Product() 
-            { Name = "Ибуклин", Description = "Жаропонижующее", PurchasingPrice = 770, RetailPrice = 410, Quantity = 44, Category = category2, Orders = new List<Order>() { order2} };
+            { Name = "Парацетамол", Description = "Жаропонижующее", PurchasingPrice = 400, RetailPrice = 220, Quantity = 53, Category = category2 };
+            Product product22 = new Product()
+            { Name = "Ибуклин", Description = "Жаропонижующее", PurchasingPrice = 770, RetailPrice = 410, Quantity = 44, Category = category2};
             Product product23 = new Product()
-            { Name = "Максиколд", Description = "Максиколд рино чай", PurchasingPrice = 1220, RetailPrice = 1000, Quantity = 100, Category = category2};
+            { Name = "Максиколд", Description = "Максиколд рино чай", PurchasingPrice = 1220, RetailPrice = 1000, Quantity = 100, Category = category2 };
             Product product24 = new Product()
             { Name = "Solpadeine", Description = "24 таблетки", PurchasingPrice = 430, RetailPrice = 290, Quantity = 35, Category = category2};
             Product product25 = new Product()
@@ -115,15 +115,27 @@ namespace PharmacyForms
             { Name = "Виферон", Description = "Таблетки", PurchasingPrice = 570, RetailPrice = 390, Quantity = 74, Category = category5 };
             Product product56 = new Product()
             { Name = "Гриппферон", Description = "Таблетки", PurchasingPrice = 2100, RetailPrice = 1770, Quantity = 44, Category = category5 };
-            
-            
-            
-            
+
+
             db.Products.AddRange(product11, product12, product13, product14, product15, product16, product17, product18);
             db.Products.AddRange(product21, product22, product23, product24, product25, product26, product27, product28);
             db.Products.AddRange(product31, product32, product33, product34, product35, product36, product37, product38, product39, product331, product332);
             db.Products.AddRange(product41, product42, product43, product44, product45, product46);
             db.Products.AddRange(product51, product52, product53, product54, product55, product56);
+
+
+            Sale sale1 = new Sale() { Quantity = 5, Product = product11};
+            Sale sale2 = new Sale() { Quantity = 14, Product = product12 };
+            Sale sale3 = new Sale() { Quantity = 14, Product = product13 };
+            Sale sale4 = new Sale() { Quantity = 14, Product = product11 };
+            Sale sale5 = new Sale() { Quantity = 22, Product = product15 };
+
+            db.Sales.AddRange(sale1, sale2, sale3,sale4,sale5);
+
+
+            Order order1 = new Order() { DateSale = new DateTime(2015, 7, 20), User = user1, Sales = new List<Sale>() {sale1,sale2,sale3 } };
+            Order order2 = new Order() { DateSale = new DateTime(2016, 12, 11), User = user2, Sales = new List<Sale>() {sale4,sale5 } };
+            db.Orders.AddRange(order1, order2);
             db.SaveChanges();
         }
     }

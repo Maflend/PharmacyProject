@@ -1,5 +1,4 @@
 ﻿
-using PhamacyLibrary.Models;
 using PharmacyForms.Controllers;
 using PharmacyForms.Forms;
 using PharmacyForms.Models;
@@ -20,7 +19,6 @@ namespace PharmacyForms
     {
     
         private Form parentsForm;
-        private User LogInUser;
         public StartForm()
         {
             InitializeComponent();
@@ -30,17 +28,16 @@ namespace PharmacyForms
             InitializeComponent();
             parentsForm = form;
         }
-        public User GetUser()
-        {
-            return LogInUser;
-        }
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             UserController userController = new UserController();
             var u = userController.Login(tbLogin.Text, tbPassword.Text);
             if (u != null && u.Login == tbLogin.Text && u.Password == tbPassword.Text) 
             {
-                LogInUser = u;
+                CurrentUserStatic.Id = u.Id;
+                CurrentUserStatic.Login = u.Login;
+                CurrentUserStatic.Password = u.Password;
+                CurrentUserStatic.Role = u.Role;
                 this.Close();
             }
             else
@@ -57,6 +54,8 @@ namespace PharmacyForms
 
         private void StartForm_Load(object sender, EventArgs e)
         {
+            if(SaleStatic.Sales != null)
+                SaleStatic.Sales.Clear();
             lblValidLogin.Text = "";
             lblValidPassword.Text = "";
         }
@@ -69,8 +68,8 @@ namespace PharmacyForms
 
         private void btnLoginAsGuest_Click(object sender, EventArgs e)
         {
-            var u = new User() { Login = "Гость", Password = null, Role = Roles.Guest };
-            LogInUser = u;
+            CurrentUserStatic.Login = "Гость";
+            CurrentUserStatic.Role = Roles.Guest;
             this.Close();
         }
     }

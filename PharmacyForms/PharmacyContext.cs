@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PhamacyLibrary.Models;
+using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,10 @@ namespace PharmacyForms
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Sale> Sales { get; set; }
         public PharmacyContext()
         {
-           // Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -30,6 +30,8 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnShowAdminMenu = new System.Windows.Forms.Button();
+            this.btnChangeUser = new System.Windows.Forms.Button();
             this.btnShoppingCart = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panelCategories = new System.Windows.Forms.Panel();
@@ -44,16 +46,21 @@ namespace PharmacyForms.Forms
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblUserLogin = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnChangeUser = new System.Windows.Forms.Button();
+            this.panelCenterLogo = new System.Windows.Forms.Panel();
+            this.lbbCenterLogo = new System.Windows.Forms.Label();
+            this.lblBelowCenterLogo = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelCategories.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktop.SuspendLayout();
+            this.panelCenterLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnShowAdminMenu);
             this.panelMenu.Controls.Add(this.btnChangeUser);
             this.panelMenu.Controls.Add(this.btnShoppingCart);
             this.panelMenu.Controls.Add(this.btnProfile);
@@ -66,12 +73,50 @@ namespace PharmacyForms.Forms
             this.panelMenu.Size = new System.Drawing.Size(220, 653);
             this.panelMenu.TabIndex = 0;
             // 
+            // btnShowAdminMenu
+            // 
+            this.btnShowAdminMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShowAdminMenu.FlatAppearance.BorderSize = 0;
+            this.btnShowAdminMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAdminMenu.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnShowAdminMenu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnShowAdminMenu.Image = global::PharmacyForms.Properties.Resources.value__1_;
+            this.btnShowAdminMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowAdminMenu.Location = new System.Drawing.Point(0, 445);
+            this.btnShowAdminMenu.Name = "btnShowAdminMenu";
+            this.btnShowAdminMenu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnShowAdminMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnShowAdminMenu.Size = new System.Drawing.Size(220, 60);
+            this.btnShowAdminMenu.TabIndex = 7;
+            this.btnShowAdminMenu.Text = "   Пользователи";
+            this.btnShowAdminMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowAdminMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowAdminMenu.UseVisualStyleBackColor = true;
+            this.btnShowAdminMenu.Click += new System.EventHandler(this.btnShowAdminMenu_Click);
+            // 
+            // btnChangeUser
+            // 
+            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangeUser.FlatAppearance.BorderSize = 0;
+            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
+            this.btnChangeUser.Name = "btnChangeUser";
+            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
+            this.btnChangeUser.TabIndex = 6;
+            this.btnChangeUser.Text = "Сменить пользователя";
+            this.btnChangeUser.UseVisualStyleBackColor = false;
+            this.btnChangeUser.Click += new System.EventHandler(this.btnChangeUser_Click);
+            // 
             // btnShoppingCart
             // 
             this.btnShoppingCart.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShoppingCart.FlatAppearance.BorderSize = 0;
             this.btnShoppingCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShoppingCart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnShoppingCart.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnShoppingCart.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnShoppingCart.Image = global::PharmacyForms.Properties.Resources.shopping_cart__1_;
             this.btnShoppingCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -80,7 +125,7 @@ namespace PharmacyForms.Forms
             this.btnShoppingCart.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnShoppingCart.Size = new System.Drawing.Size(220, 60);
             this.btnShoppingCart.TabIndex = 5;
-            this.btnShoppingCart.Text = "   Shopping cart";
+            this.btnShoppingCart.Text = "   Корзина";
             this.btnShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShoppingCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShoppingCart.UseVisualStyleBackColor = true;
@@ -91,7 +136,7 @@ namespace PharmacyForms.Forms
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfile.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProfile.Image = global::PharmacyForms.Properties.Resources.value__1_;
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,7 +145,7 @@ namespace PharmacyForms.Forms
             this.btnProfile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnProfile.Size = new System.Drawing.Size(220, 60);
             this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "   My profile";
+            this.btnProfile.Text = "   Профиль";
             this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -200,7 +245,7 @@ namespace PharmacyForms.Forms
             this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCategories.FlatAppearance.BorderSize = 0;
             this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCategories.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCategories.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCategories.Image = global::PharmacyForms.Properties.Resources.shopping_list;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,7 +254,7 @@ namespace PharmacyForms.Forms
             this.btnCategories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnCategories.Size = new System.Drawing.Size(220, 60);
             this.btnCategories.TabIndex = 1;
-            this.btnCategories.Text = "   Categories";
+            this.btnCategories.Text = "   Категории";
             this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategories.UseVisualStyleBackColor = true;
@@ -261,28 +306,46 @@ namespace PharmacyForms.Forms
             // 
             // panelDesktop
             // 
+            this.panelDesktop.Controls.Add(this.panelCenterLogo);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 80);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(720, 573);
             this.panelDesktop.TabIndex = 2;
             // 
-            // btnChangeUser
+            // panelCenterLogo
             // 
-            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnChangeUser.FlatAppearance.BorderSize = 0;
-            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
-            this.btnChangeUser.Name = "btnChangeUser";
-            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
-            this.btnChangeUser.TabIndex = 6;
-            this.btnChangeUser.Text = "Сменить пользователя";
-            this.btnChangeUser.UseVisualStyleBackColor = false;
-            this.btnChangeUser.Click += new System.EventHandler(this.btnChangeUser_Click);
+            this.panelCenterLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCenterLogo.Controls.Add(this.lbbCenterLogo);
+            this.panelCenterLogo.Controls.Add(this.lblBelowCenterLogo);
+            this.panelCenterLogo.Location = new System.Drawing.Point(211, 173);
+            this.panelCenterLogo.Name = "panelCenterLogo";
+            this.panelCenterLogo.Size = new System.Drawing.Size(340, 192);
+            this.panelCenterLogo.TabIndex = 1;
+            // 
+            // lbbCenterLogo
+            // 
+            this.lbbCenterLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbbCenterLogo.AutoSize = true;
+            this.lbbCenterLogo.Font = new System.Drawing.Font("Modern No. 20", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lbbCenterLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.lbbCenterLogo.Location = new System.Drawing.Point(17, 31);
+            this.lbbCenterLogo.Name = "lbbCenterLogo";
+            this.lbbCenterLogo.Size = new System.Drawing.Size(303, 83);
+            this.lbbCenterLogo.TabIndex = 0;
+            this.lbbCenterLogo.Text = "Pharma";
+            // 
+            // lblBelowCenterLogo
+            // 
+            this.lblBelowCenterLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBelowCenterLogo.AutoSize = true;
+            this.lblBelowCenterLogo.Font = new System.Drawing.Font("Microsoft JhengHei Light", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBelowCenterLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.lblBelowCenterLogo.Location = new System.Drawing.Point(31, 114);
+            this.lblBelowCenterLogo.Name = "lblBelowCenterLogo";
+            this.lblBelowCenterLogo.Size = new System.Drawing.Size(279, 34);
+            this.lblBelowCenterLogo.TabIndex = 0;
+            this.lblBelowCenterLogo.Text = "Добро пожаловать.";
             // 
             // MenuForm
             // 
@@ -303,6 +366,9 @@ namespace PharmacyForms.Forms
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelCenterLogo.ResumeLayout(false);
+            this.panelCenterLogo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +391,9 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Button btnAntibiotics;
         private System.Windows.Forms.Button btnAntiviralAgent;
         private System.Windows.Forms.Button btnChangeUser;
+        private System.Windows.Forms.Button btnShowAdminMenu;
+        private System.Windows.Forms.Label lblBelowCenterLogo;
+        private System.Windows.Forms.Label lbbCenterLogo;
+        private System.Windows.Forms.Panel panelCenterLogo;
     }
 }

@@ -1,6 +1,5 @@
-﻿using PhamacyLibrary.Models;
+﻿using PharmacyForms.Models;
 using PharmacyForms.Forms;
-using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,25 +18,30 @@ namespace PharmacyForms.Forms
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        private static User currentUser;
 
         static StartForm startForm;
         public MenuForm()
         {
             InitializeComponent();
             random = new Random();
-            panelCategories.Visible = false;          
+            panelCategories.Visible = false;
+            btnShowAdminMenu.Visible = false;
+            btnProfile.Visible = false;
         }
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-          // AddItemsInDataBase add = new AddItemsInDataBase();
+          //  AddItemsInDataBase add = new AddItemsInDataBase();
            // add.Add();
             // ...
             startForm = new StartForm(this);
-            SetName();
-            if (currentUser != null)
-                lblUserLogin.Text = currentUser.Login;
+            startForm.ShowDialog();
+            if (CurrentUserStatic.Login!= null)
+                lblUserLogin.Text = CurrentUserStatic.Login;
+            if(CurrentUserStatic.Role == Roles.Admin)
+            {
+                btnShowAdminMenu.Visible = true;
+            }
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -45,7 +49,6 @@ namespace PharmacyForms.Forms
             {
                 activeForm.Close();
             }
-           // ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -100,12 +103,15 @@ namespace PharmacyForms.Forms
         {
             showSubMenu(panelCategories);
             ActivateButton(sender);
-
+            if(activeForm!= null)
+                activeForm.Close();
+            panelDesktop.Controls.Add(panelCenterLogo);
         }
-
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            CartForm cartForm = new CartForm();
+            OpenChildForm(cartForm, sender);
             ActivateButton(sender);
         }
 
@@ -115,8 +121,19 @@ namespace PharmacyForms.Forms
             ProfileForm profileForm = new ProfileForm();
             OpenChildForm(profileForm, sender);
             ActivateButton(sender);       
+        }   
+        private void btnOpenProductForm_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var buttonCategoryName = button.Text;
+            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
+            OpenChildForm( new ProductForm(CurrentUserStatic.Role, category), sender);
         }
-
+        private void btnChangeUser_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
+        }
         public void hideSubMenu()
         {
             if (panelCategories.Visible == true)
@@ -132,28 +149,12 @@ namespace PharmacyForms.Forms
             else
                 subMenu.Visible = false;
         }
- 
-       
-        private static void SetName()
-        {
-            startForm.ShowDialog();
-            User user = new User();
-            currentUser = startForm.GetUser();
-            
-        }
 
-        private void btnOpenProductForm_Click(object sender, EventArgs e)
+        private void btnShowAdminMenu_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            var buttonCategoryName = button.Text;
-            Categories category = (Categories)Enum.Parse(typeof(Categories), buttonCategoryName);
-            OpenChildForm(new ProductForm(currentUser.Role, category), sender);
-        }
-
-        private void btnChangeUser_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Retry;
-            this.Close();
+            hideSubMenu();
+            OpenChildForm(new UserControlForm(),sender);
+            ActivateButton(sender);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using PhamacyLibrary.Models;
-using PharmacyForms.Models;
+﻿using PharmacyForms.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +33,7 @@ namespace PharmacyForms.Controllers
             var product = GetById(id);
             if(product != null)
             {
-                db.Remove(product);
+                db.Products.Remove(product);
                 db.SaveChanges();
                 return true;
             }
@@ -45,13 +44,17 @@ namespace PharmacyForms.Controllers
             if(product != null)
             {
                 var prod = db.Products.FirstOrDefault(i => i.Id == product.Id);
-                prod.Name = product.Name;
-                prod.Quantity = product.Quantity;
-                prod.Description = product.Description;
-                prod.RetailPrice = product.RetailPrice;
-                prod.PurchasingPrice = product.PurchasingPrice;
-                db.SaveChanges();
-                return true;
+                if(prod != null)
+                {
+                    prod.Name = product.Name;
+                    prod.Quantity = product.Quantity;
+                    prod.Description = product.Description;
+                    prod.RetailPrice = product.RetailPrice;
+                    prod.PurchasingPrice = product.PurchasingPrice;
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             return false;
         }
