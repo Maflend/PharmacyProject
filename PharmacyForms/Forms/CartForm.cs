@@ -22,9 +22,9 @@ namespace PharmacyForms.Forms
         {
             SetData();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBuy_Click(object sender, EventArgs e)
         {
-            if(SaleStatic.Sales != null)
+            if (SaleStatic.Sales != null && lblTotalCost.Text != "0")
             {
                 if (MessageBox.Show("Подтвердите покупку", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

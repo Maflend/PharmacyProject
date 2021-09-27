@@ -27,9 +27,13 @@ namespace PharmacyForms.Forms
         }
         private void UpdateUserForm_Load(object sender, EventArgs e)
         {
-            cbRoles.DataSource = Enum.GetValues(typeof(Roles));
-            cbRoles.SelectedItem = currentUser.Role;
-            tbLogin.Text = currentUser.Login;
+            if(currentUser != null)
+            {
+                cbRoles.DataSource = Enum.GetValues(typeof(Roles));
+                cbRoles.SelectedItem = currentUser.Role;
+                tbLogin.Text = currentUser.Login;
+            }
+            
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -38,18 +42,23 @@ namespace PharmacyForms.Forms
             string ErrorMessage;
             if (isValid(tbLogin.Text, out ErrorMessage))
             {
-                user.Id = currentUser.Id;
-                user.Login = tbLogin.Text;
-                user.Password = currentUser.Password;
-                user.Role = (Roles)cbRoles.SelectedItem;
-                bool isUpdate = controller.Update(user);
-                if (isUpdate)
-                {
-                    MessageBox.Show("Изменения приняты.");
-                    this.Close();
-                }
+                if ((Roles)cbRoles.SelectedItem == Roles.Guest)
+                    MessageBox.Show("Пользователю нельзя назначить роль Guest");
                 else
-                    MessageBox.Show("Изменения не приняты.");
+                {
+                    user.Id = currentUser.Id;
+                    user.Login = tbLogin.Text;
+                    user.Password = currentUser.Password;
+                    user.Role = (Roles)cbRoles.SelectedItem;
+                    bool isUpdate = controller.Update(user);
+                    if (isUpdate)
+                    {
+                        MessageBox.Show("Изменения приняты.");
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Изменения не приняты.");
+                }
             }
             else
                 MessageBox.Show($"{ErrorMessage}");

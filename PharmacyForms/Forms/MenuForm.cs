@@ -31,8 +31,8 @@ namespace PharmacyForms.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-           //AddItemsInDataBase add = new AddItemsInDataBase();
-           // add.Add();
+          // AddItemsInDataBase add = new AddItemsInDataBase();
+          // add.Add();
             // ...
             startForm = new StartForm(this);
             startForm.ShowDialog();
@@ -57,6 +57,7 @@ namespace PharmacyForms.Forms
             this.panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+           
             
         }
         private Color SelectThemeColor()

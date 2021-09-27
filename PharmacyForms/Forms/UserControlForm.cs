@@ -35,12 +35,30 @@ namespace PharmacyForms.Forms
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var user = CreateUserFromRowInDataGridView(sender,e);
-            if(dgvUsers.Columns[e.ColumnIndex].Name == "Update")
+            if(user != null)
             {
-                UpdateUserForm updateUserForm = new UpdateUserForm(user);
-                updateUserForm.ShowDialog();
-                SetDataGrid();
-            }
+                if (dgvUsers.Columns[e.ColumnIndex].Name == "Update")
+                {
+                    UpdateUserForm updateUserForm = new UpdateUserForm(user);
+                    updateUserForm.ShowDialog();
+                    SetDataGrid();
+                }
+                if (dgvUsers.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    if (MessageBox.Show($"Вы действительно хотите удалить этого пользователя: {user.Login}?", "Удаление пользователя", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        UserController controller = new UserController();
+                        var isDelete = controller.Delete(user.Id);
+                        if (isDelete)
+                        {
+                            MessageBox.Show("Пользователь удален");
+                            SetDataGrid();
+                        }
+
+                    }
+                }
+            }    
+           
         }
         private void SetDataGrid()
         {
@@ -55,12 +73,16 @@ namespace PharmacyForms.Forms
         }
         private User CreateUserFromRowInDataGridView(object sender, DataGridViewCellEventArgs e)
         {
-            User user = new User();
-            user.Id = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells[2].Value.ToString());
-            user.Login = dgvUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
-            user.Password = dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
-            user.Role = (Roles)dgvUsers.Rows[e.RowIndex].Cells[5].Value;
-            return user;
+            if (e.ColumnIndex >= 0 && e.ColumnIndex <= 1 && e.RowIndex >= 0)
+            {
+                User user = new User();
+                user.Id = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells[2].Value.ToString());
+                user.Login = dgvUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
+                user.Password = dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
+                user.Role = (Roles)dgvUsers.Rows[e.RowIndex].Cells[5].Value;
+                return user;
+            }
+            return null;
         }
        
     }

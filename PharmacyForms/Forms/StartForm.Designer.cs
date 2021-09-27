@@ -55,18 +55,18 @@ namespace PharmacyForms
             // 
             this.tbLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbLogin.Location = new System.Drawing.Point(152, 55);
+            this.tbLogin.Location = new System.Drawing.Point(155, 55);
             this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(388, 22);
+            this.tbLogin.Size = new System.Drawing.Size(385, 22);
             this.tbLogin.TabIndex = 2;
             // 
             // tbPassword
             // 
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPassword.Location = new System.Drawing.Point(152, 96);
+            this.tbPassword.Location = new System.Drawing.Point(155, 96);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(396, 22);
+            this.tbPassword.Size = new System.Drawing.Size(393, 22);
             this.tbPassword.TabIndex = 3;
             // 
             // btnSignIn

@@ -69,9 +69,8 @@ namespace PharmacyForms.Forms
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(251, 871);
+            this.panelMenu.Size = new System.Drawing.Size(220, 653);
             this.panelMenu.TabIndex = 0;
             // 
             // btnShowAdminMenu
@@ -83,12 +82,11 @@ namespace PharmacyForms.Forms
             this.btnShowAdminMenu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnShowAdminMenu.Image = global::PharmacyForms.Properties.Resources.value__1_;
             this.btnShowAdminMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowAdminMenu.Location = new System.Drawing.Point(0, 594);
-            this.btnShowAdminMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowAdminMenu.Location = new System.Drawing.Point(0, 445);
             this.btnShowAdminMenu.Name = "btnShowAdminMenu";
-            this.btnShowAdminMenu.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
+            this.btnShowAdminMenu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnShowAdminMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnShowAdminMenu.Size = new System.Drawing.Size(251, 80);
+            this.btnShowAdminMenu.Size = new System.Drawing.Size(220, 60);
             this.btnShowAdminMenu.TabIndex = 7;
             this.btnShowAdminMenu.Text = "   Пользователи";
             this.btnShowAdminMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,10 +103,9 @@ namespace PharmacyForms.Forms
             this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnChangeUser.Location = new System.Drawing.Point(0, 803);
-            this.btnChangeUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
             this.btnChangeUser.Name = "btnChangeUser";
-            this.btnChangeUser.Size = new System.Drawing.Size(251, 68);
+            this.btnChangeUser.Size = new System.Drawing.Size(220, 51);
             this.btnChangeUser.TabIndex = 6;
             this.btnChangeUser.Text = "Сменить пользователя";
             this.btnChangeUser.UseVisualStyleBackColor = false;
@@ -123,11 +120,10 @@ namespace PharmacyForms.Forms
             this.btnShoppingCart.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnShoppingCart.Image = global::PharmacyForms.Properties.Resources.shopping_cart__1_;
             this.btnShoppingCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShoppingCart.Location = new System.Drawing.Point(0, 514);
-            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
             this.btnShoppingCart.Name = "btnShoppingCart";
-            this.btnShoppingCart.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnShoppingCart.Size = new System.Drawing.Size(251, 80);
+            this.btnShoppingCart.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnShoppingCart.Size = new System.Drawing.Size(220, 60);
             this.btnShoppingCart.TabIndex = 5;
             this.btnShoppingCart.Text = "   Корзина";
             this.btnShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,11 +140,10 @@ namespace PharmacyForms.Forms
             this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProfile.Image = global::PharmacyForms.Properties.Resources.value__1_;
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.Location = new System.Drawing.Point(0, 434);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfile.Location = new System.Drawing.Point(0, 325);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnProfile.Size = new System.Drawing.Size(251, 80);
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(220, 60);
             this.btnProfile.TabIndex = 4;
             this.btnProfile.Text = "   Профиль";
             this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,10 +160,9 @@ namespace PharmacyForms.Forms
             this.panelCategories.Controls.Add(this.btnPainReliever);
             this.panelCategories.Controls.Add(this.btnAntipyretic);
             this.panelCategories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCategories.Location = new System.Drawing.Point(0, 187);
-            this.panelCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelCategories.Location = new System.Drawing.Point(0, 140);
             this.panelCategories.Name = "panelCategories";
-            this.panelCategories.Size = new System.Drawing.Size(251, 247);
+            this.panelCategories.Size = new System.Drawing.Size(220, 185);
             this.panelCategories.TabIndex = 2;
             // 
             // btnVitamins
@@ -177,10 +171,10 @@ namespace PharmacyForms.Forms
             this.btnVitamins.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVitamins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVitamins.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVitamins.Location = new System.Drawing.Point(0, 192);
-            this.btnVitamins.Margin = new System.Windows.Forms.Padding(3, 40, 3, 4);
+            this.btnVitamins.Location = new System.Drawing.Point(0, 144);
+            this.btnVitamins.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.btnVitamins.Name = "btnVitamins";
-            this.btnVitamins.Size = new System.Drawing.Size(251, 48);
+            this.btnVitamins.Size = new System.Drawing.Size(220, 36);
             this.btnVitamins.TabIndex = 5;
             this.btnVitamins.Text = "Витамины";
             this.btnVitamins.UseVisualStyleBackColor = false;
@@ -192,10 +186,10 @@ namespace PharmacyForms.Forms
             this.btnAntibiotics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAntibiotics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntibiotics.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAntibiotics.Location = new System.Drawing.Point(0, 144);
-            this.btnAntibiotics.Margin = new System.Windows.Forms.Padding(3, 40, 3, 4);
+            this.btnAntibiotics.Location = new System.Drawing.Point(0, 108);
+            this.btnAntibiotics.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.btnAntibiotics.Name = "btnAntibiotics";
-            this.btnAntibiotics.Size = new System.Drawing.Size(251, 48);
+            this.btnAntibiotics.Size = new System.Drawing.Size(220, 36);
             this.btnAntibiotics.TabIndex = 4;
             this.btnAntibiotics.Text = "Антибиотики";
             this.btnAntibiotics.UseVisualStyleBackColor = false;
@@ -207,10 +201,10 @@ namespace PharmacyForms.Forms
             this.btnAntiviralAgent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAntiviralAgent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntiviralAgent.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAntiviralAgent.Location = new System.Drawing.Point(0, 96);
-            this.btnAntiviralAgent.Margin = new System.Windows.Forms.Padding(3, 40, 3, 4);
+            this.btnAntiviralAgent.Location = new System.Drawing.Point(0, 72);
+            this.btnAntiviralAgent.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.btnAntiviralAgent.Name = "btnAntiviralAgent";
-            this.btnAntiviralAgent.Size = new System.Drawing.Size(251, 48);
+            this.btnAntiviralAgent.Size = new System.Drawing.Size(220, 36);
             this.btnAntiviralAgent.TabIndex = 3;
             this.btnAntiviralAgent.Text = "Противовирусные";
             this.btnAntiviralAgent.UseVisualStyleBackColor = false;
@@ -222,10 +216,10 @@ namespace PharmacyForms.Forms
             this.btnPainReliever.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPainReliever.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPainReliever.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPainReliever.Location = new System.Drawing.Point(0, 48);
-            this.btnPainReliever.Margin = new System.Windows.Forms.Padding(3, 40, 3, 4);
+            this.btnPainReliever.Location = new System.Drawing.Point(0, 36);
+            this.btnPainReliever.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.btnPainReliever.Name = "btnPainReliever";
-            this.btnPainReliever.Size = new System.Drawing.Size(251, 48);
+            this.btnPainReliever.Size = new System.Drawing.Size(220, 36);
             this.btnPainReliever.TabIndex = 2;
             this.btnPainReliever.Text = "Болеутоляющие";
             this.btnPainReliever.UseVisualStyleBackColor = false;
@@ -238,9 +232,9 @@ namespace PharmacyForms.Forms
             this.btnAntipyretic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntipyretic.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAntipyretic.Location = new System.Drawing.Point(0, 0);
-            this.btnAntipyretic.Margin = new System.Windows.Forms.Padding(34, 40, 34, 40);
+            this.btnAntipyretic.Margin = new System.Windows.Forms.Padding(30);
             this.btnAntipyretic.Name = "btnAntipyretic";
-            this.btnAntipyretic.Size = new System.Drawing.Size(251, 48);
+            this.btnAntipyretic.Size = new System.Drawing.Size(220, 36);
             this.btnAntipyretic.TabIndex = 0;
             this.btnAntipyretic.Text = "Жаропонижающие";
             this.btnAntipyretic.UseVisualStyleBackColor = false;
@@ -255,11 +249,10 @@ namespace PharmacyForms.Forms
             this.btnCategories.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCategories.Image = global::PharmacyForms.Properties.Resources.shopping_list;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(0, 107);
-            this.btnCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCategories.Location = new System.Drawing.Point(0, 80);
             this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnCategories.Size = new System.Drawing.Size(251, 80);
+            this.btnCategories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCategories.Size = new System.Drawing.Size(220, 60);
             this.btnCategories.TabIndex = 1;
             this.btnCategories.Text = "   Категории";
             this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,9 +266,8 @@ namespace PharmacyForms.Forms
             this.panelLogo.Controls.Add(this.lblLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(251, 107);
+            this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
             // 
             // lblLogo
@@ -283,9 +275,9 @@ namespace PharmacyForms.Forms
             this.lblLogo.AutoSize = true;
             this.lblLogo.Font = new System.Drawing.Font("Modern No. 20", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLogo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLogo.Location = new System.Drawing.Point(61, 33);
+            this.lblLogo.Location = new System.Drawing.Point(53, 25);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(127, 35);
+            this.lblLogo.Size = new System.Drawing.Size(103, 29);
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "Pharma";
             // 
@@ -294,10 +286,9 @@ namespace PharmacyForms.Forms
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelTitleBar.Controls.Add(this.lblUserLogin);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(251, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(823, 107);
+            this.panelTitleBar.Size = new System.Drawing.Size(720, 80);
             this.panelTitleBar.TabIndex = 1;
             // 
             // lblUserLogin
@@ -306,10 +297,10 @@ namespace PharmacyForms.Forms
             this.lblUserLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUserLogin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUserLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserLogin.Location = new System.Drawing.Point(659, 0);
+            this.lblUserLogin.Location = new System.Drawing.Point(585, 0);
             this.lblUserLogin.Name = "lblUserLogin";
-            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 31, 23, 0);
-            this.lblUserLogin.Size = new System.Drawing.Size(164, 68);
+            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 20, 0);
+            this.lblUserLogin.Size = new System.Drawing.Size(135, 53);
             this.lblUserLogin.TabIndex = 1;
             this.lblUserLogin.Text = "UserName";
             // 
@@ -317,10 +308,9 @@ namespace PharmacyForms.Forms
             // 
             this.panelDesktop.Controls.Add(this.panelCenterLogo);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(251, 107);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelDesktop.Location = new System.Drawing.Point(220, 80);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(823, 764);
+            this.panelDesktop.Size = new System.Drawing.Size(720, 573);
             this.panelDesktop.TabIndex = 2;
             // 
             // panelCenterLogo
@@ -328,10 +318,9 @@ namespace PharmacyForms.Forms
             this.panelCenterLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCenterLogo.Controls.Add(this.lbbCenterLogo);
             this.panelCenterLogo.Controls.Add(this.lblBelowCenterLogo);
-            this.panelCenterLogo.Location = new System.Drawing.Point(241, 231);
-            this.panelCenterLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelCenterLogo.Location = new System.Drawing.Point(211, 173);
             this.panelCenterLogo.Name = "panelCenterLogo";
-            this.panelCenterLogo.Size = new System.Drawing.Size(389, 256);
+            this.panelCenterLogo.Size = new System.Drawing.Size(340, 192);
             this.panelCenterLogo.TabIndex = 1;
             // 
             // lbbCenterLogo
@@ -340,9 +329,9 @@ namespace PharmacyForms.Forms
             this.lbbCenterLogo.AutoSize = true;
             this.lbbCenterLogo.Font = new System.Drawing.Font("Modern No. 20", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lbbCenterLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.lbbCenterLogo.Location = new System.Drawing.Point(19, 41);
+            this.lbbCenterLogo.Location = new System.Drawing.Point(17, 31);
             this.lbbCenterLogo.Name = "lbbCenterLogo";
-            this.lbbCenterLogo.Size = new System.Drawing.Size(378, 103);
+            this.lbbCenterLogo.Size = new System.Drawing.Size(303, 83);
             this.lbbCenterLogo.TabIndex = 0;
             this.lbbCenterLogo.Text = "Pharma";
             // 
@@ -352,22 +341,21 @@ namespace PharmacyForms.Forms
             this.lblBelowCenterLogo.AutoSize = true;
             this.lblBelowCenterLogo.Font = new System.Drawing.Font("Microsoft JhengHei Light", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBelowCenterLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.lblBelowCenterLogo.Location = new System.Drawing.Point(35, 152);
+            this.lblBelowCenterLogo.Location = new System.Drawing.Point(31, 114);
             this.lblBelowCenterLogo.Name = "lblBelowCenterLogo";
-            this.lblBelowCenterLogo.Size = new System.Drawing.Size(351, 43);
+            this.lblBelowCenterLogo.Size = new System.Drawing.Size(279, 34);
             this.lblBelowCenterLogo.TabIndex = 0;
             this.lblBelowCenterLogo.Text = "Добро пожаловать.";
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 871);
+            this.ClientSize = new System.Drawing.Size(940, 653);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(1090, 907);
+            this.MinimumSize = new System.Drawing.Size(956, 690);
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";

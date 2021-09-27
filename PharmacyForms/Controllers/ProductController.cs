@@ -20,8 +20,8 @@ namespace PharmacyForms.Controllers
         }
         public List<Product> GetByCategory(Categories categories)
         {
-            var products = db.Products.Where(p => p.Category.Categories == categories).ToList();
-            return products;
+            var products =  db.Products.Where(p => p.Category.Categories == categories).ToList();
+            return products; 
         }
         public void Post (Product product)
         {
@@ -57,6 +57,15 @@ namespace PharmacyForms.Controllers
                 return false;
             }
             return false;
+        }
+        public List<Product> FindByName(string name, Categories category)
+        {
+
+            var products = db.Products.Where(p => p.Name.StartsWith(name) && p.Category.Categories == category).Select(p => p).ToList(); ;
+            if(products!= null)
+                return products;
+            return null;
+           
         }
     }
 }

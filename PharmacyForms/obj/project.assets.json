@@ -5797,25 +5797,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Алина\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Maflend\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Алина\\Desktop\\Distant\\Apteka\\ppp\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
+      "projectUniqueName": "C:\\Users\\Maflend\\source\\repos\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
       "projectName": "PharmacyForms",
-      "projectPath": "C:\\Users\\Алина\\Desktop\\Distant\\Apteka\\ppp\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
-      "packagesPath": "C:\\Users\\Алина\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Алина\\Desktop\\Distant\\Apteka\\ppp\\PharmacyProject\\PharmacyForms\\obj\\",
+      "projectPath": "C:\\Users\\Maflend\\source\\repos\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
+      "packagesPath": "C:\\Users\\Maflend\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maflend\\source\\repos\\PharmacyProject\\PharmacyForms\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Алина\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maflend\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5875,7 +5873,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

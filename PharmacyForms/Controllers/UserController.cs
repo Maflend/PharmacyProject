@@ -80,5 +80,16 @@ namespace PharmacyForms.Controllers
             return false;
            
         }
+        public bool Delete(int id)
+        {
+            var user = GetById(id);
+            if(user != null)
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

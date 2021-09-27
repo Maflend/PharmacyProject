@@ -30,9 +30,9 @@ namespace PharmacyForms
         private void InitializeComponent()
         {
             this.panelActionBar = new System.Windows.Forms.Panel();
+            this.btnResetFindProduct = new System.Windows.Forms.Button();
             this.tbFindName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnAddproduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.panelActionBar.SuspendLayout();
@@ -44,22 +44,35 @@ namespace PharmacyForms
             this.panelActionBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelActionBar.Controls.Add(this.btnResetFindProduct);
             this.panelActionBar.Controls.Add(this.tbFindName);
             this.panelActionBar.Controls.Add(this.label1);
-            this.panelActionBar.Controls.Add(this.btnSearch);
             this.panelActionBar.Controls.Add(this.btnAddproduct);
             this.panelActionBar.Location = new System.Drawing.Point(0, 0);
             this.panelActionBar.Name = "panelActionBar";
             this.panelActionBar.Size = new System.Drawing.Size(704, 119);
             this.panelActionBar.TabIndex = 2;
             // 
+            // btnResetFindProduct
+            // 
+            this.btnResetFindProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnResetFindProduct.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnResetFindProduct.Location = new System.Drawing.Point(303, 25);
+            this.btnResetFindProduct.Name = "btnResetFindProduct";
+            this.btnResetFindProduct.Size = new System.Drawing.Size(75, 36);
+            this.btnResetFindProduct.TabIndex = 3;
+            this.btnResetFindProduct.Text = "Сброс";
+            this.btnResetFindProduct.UseVisualStyleBackColor = false;
+            this.btnResetFindProduct.Click += new System.EventHandler(this.btnResetFindProduct_Click);
+            // 
             // tbFindName
             // 
             this.tbFindName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbFindName.Location = new System.Drawing.Point(10, 27);
             this.tbFindName.Name = "tbFindName";
-            this.tbFindName.Size = new System.Drawing.Size(240, 34);
+            this.tbFindName.Size = new System.Drawing.Size(287, 34);
             this.tbFindName.TabIndex = 2;
+            this.tbFindName.TextChanged += new System.EventHandler(this.tbFindName_TextChanged);
             // 
             // label1
             // 
@@ -70,24 +83,12 @@ namespace PharmacyForms
             this.label1.TabIndex = 1;
             this.label1.Text = "Введите название лекарства";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Location = new System.Drawing.Point(331, 10);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(182, 51);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Найти";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // btnAddproduct
             // 
             this.btnAddproduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnAddproduct.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddproduct.Location = new System.Drawing.Point(519, 10);
+            this.btnAddproduct.Location = new System.Drawing.Point(519, 3);
             this.btnAddproduct.Name = "btnAddproduct";
             this.btnAddproduct.Size = new System.Drawing.Size(182, 51);
             this.btnAddproduct.TabIndex = 0;
@@ -133,7 +134,7 @@ namespace PharmacyForms
         private System.Windows.Forms.Button btnAddproduct;
         private System.Windows.Forms.TextBox tbFindName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnResetFindProduct;
     }
 }
 

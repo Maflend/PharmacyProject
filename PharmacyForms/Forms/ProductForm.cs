@@ -22,13 +22,12 @@ namespace PharmacyForms
         {
             InitializeComponent();
         }
-        public ProductForm(Roles role,Categories category)
+        public ProductForm(Roles role, Categories category)
         {
             InitializeComponent();
             currentCategory = category;
             currentRole = role;
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             dgvProduct.AllowUserToAddRows = false;
@@ -37,6 +36,10 @@ namespace PharmacyForms
             foreach (DataGridViewColumn column in dgvProduct.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            if(currentRole == Roles.Client || currentRole == Roles.Guest)
+            {
+                btnAddproduct.Visible = false;
             }
         }
         private void AddButtonsInDataGridView()
@@ -160,6 +163,20 @@ namespace PharmacyForms
                 return new Product();
             }
             return new Product();
+        }
+        private void btnResetFindProduct_Click(object sender, EventArgs e)
+        {
+            tbFindName.Text = "";
+            SetDataGrid();
+        }
+
+        private void tbFindName_TextChanged(object sender, EventArgs e)
+        {
+            var productName = tbFindName.Text;
+            ProductController controller = new ProductController();
+            List<Product> products = controller.FindByName(productName, currentCategory);
+            if (products != null)
+                dgvProduct.DataSource = products;
         }
     }
 }
