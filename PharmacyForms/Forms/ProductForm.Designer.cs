@@ -94,6 +94,7 @@ namespace PharmacyForms
             this.btnAddproduct.TabIndex = 0;
             this.btnAddproduct.Text = "Добавить товар";
             this.btnAddproduct.UseVisualStyleBackColor = false;
+            this.btnAddproduct.Click += new System.EventHandler(this.btnAddproduct_Click);
             // 
             // dgvProduct
             // 

@@ -178,5 +178,15 @@ namespace PharmacyForms
             if (products != null)
                 dgvProduct.DataSource = products;
         }
+
+        private void btnAddproduct_Click(object sender, EventArgs e)
+        {
+            AddProductForm addProductForm = new AddProductForm(currentCategory);
+            addProductForm.ShowDialog();
+            if (addProductForm.DialogResult == DialogResult.OK)
+            {
+                SetDataGrid();
+            }
+        }
     }
 }

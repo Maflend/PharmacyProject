@@ -130,3 +130,4 @@ C:\Users\Алина\Desktop\Distant\Apteka\ppp\PharmacyProject\PharmacyForms\obj
 C:\Users\Алина\Desktop\Distant\Apteka\ppp\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\ref\PharmacyForms.dll
 C:\Users\Алина\Desktop\Distant\Apteka\ppp\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.pdb
 C:\Users\Алина\Desktop\Distant\Apteka\ppp\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.genruntimeconfig.cache
+C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.AddProductForm.resources
