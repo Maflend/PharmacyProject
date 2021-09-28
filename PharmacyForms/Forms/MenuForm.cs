@@ -27,6 +27,7 @@ namespace PharmacyForms.Forms
             panelCategories.Visible = false;
             btnShowAdminMenu.Visible = false;
             btnProfile.Visible = false;
+            btnOpenMonthReport.Visible = false;
         }
         private void MenuForm_Load(object sender, EventArgs e)
         {
@@ -42,6 +43,8 @@ namespace PharmacyForms.Forms
             {
                 btnShowAdminMenu.Visible = true;
             }
+            //if (CurrentUserStatic.Role == Roles.Director)
+            //    btnOpenMonthReport.Visible = true;
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -155,6 +158,20 @@ namespace PharmacyForms.Forms
         {
             hideSubMenu();
             OpenChildForm(new UserControlForm(),sender);
+            ActivateButton(sender);
+        }
+
+        private void btnOrderHistory_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new OrderHistoryForm(), sender);
+            ActivateButton(sender);
+        }
+
+        private void btnOpenMonthReport_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new MonthReportForm(), sender);
             ActivateButton(sender);
         }
     }

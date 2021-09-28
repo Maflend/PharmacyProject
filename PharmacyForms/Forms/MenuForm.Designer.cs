@@ -30,10 +30,11 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnOrderHistory = new System.Windows.Forms.Button();
+            this.btnOpenMonthReport = new System.Windows.Forms.Button();
             this.btnShowAdminMenu = new System.Windows.Forms.Button();
             this.btnChangeUser = new System.Windows.Forms.Button();
             this.btnShoppingCart = new System.Windows.Forms.Button();
-            this.btnProfile = new System.Windows.Forms.Button();
             this.panelCategories = new System.Windows.Forms.Panel();
             this.btnVitamins = new System.Windows.Forms.Button();
             this.btnAntibiotics = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace PharmacyForms.Forms
             this.btnCategories = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblUserLogin = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
@@ -60,10 +62,11 @@ namespace PharmacyForms.Forms
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnOrderHistory);
+            this.panelMenu.Controls.Add(this.btnOpenMonthReport);
             this.panelMenu.Controls.Add(this.btnShowAdminMenu);
             this.panelMenu.Controls.Add(this.btnChangeUser);
             this.panelMenu.Controls.Add(this.btnShoppingCart);
-            this.panelMenu.Controls.Add(this.btnProfile);
             this.panelMenu.Controls.Add(this.panelCategories);
             this.panelMenu.Controls.Add(this.btnCategories);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -72,6 +75,46 @@ namespace PharmacyForms.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 653);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnOrderHistory
+            // 
+            this.btnOrderHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrderHistory.FlatAppearance.BorderSize = 0;
+            this.btnOrderHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderHistory.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOrderHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOrderHistory.Image = global::PharmacyForms.Properties.Resources.time_8_32;
+            this.btnOrderHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderHistory.Location = new System.Drawing.Point(0, 445);
+            this.btnOrderHistory.Name = "btnOrderHistory";
+            this.btnOrderHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnOrderHistory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOrderHistory.Size = new System.Drawing.Size(220, 60);
+            this.btnOrderHistory.TabIndex = 8;
+            this.btnOrderHistory.Text = "   История заказов";
+            this.btnOrderHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrderHistory.UseVisualStyleBackColor = true;
+            this.btnOrderHistory.Click += new System.EventHandler(this.btnOrderHistory_Click);
+            // 
+            // btnOpenMonthReport
+            // 
+            this.btnOpenMonthReport.FlatAppearance.BorderSize = 0;
+            this.btnOpenMonthReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenMonthReport.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenMonthReport.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOpenMonthReport.Image = global::PharmacyForms.Properties.Resources.value__1_;
+            this.btnOpenMonthReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenMonthReport.Location = new System.Drawing.Point(0, 511);
+            this.btnOpenMonthReport.Name = "btnOpenMonthReport";
+            this.btnOpenMonthReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnOpenMonthReport.Size = new System.Drawing.Size(220, 60);
+            this.btnOpenMonthReport.TabIndex = 4;
+            this.btnOpenMonthReport.Text = "   Ежемесячный отчет";
+            this.btnOpenMonthReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenMonthReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenMonthReport.UseVisualStyleBackColor = true;
+            this.btnOpenMonthReport.Click += new System.EventHandler(this.btnOpenMonthReport_Click);
             // 
             // btnShowAdminMenu
             // 
@@ -82,7 +125,7 @@ namespace PharmacyForms.Forms
             this.btnShowAdminMenu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnShowAdminMenu.Image = global::PharmacyForms.Properties.Resources.value__1_;
             this.btnShowAdminMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowAdminMenu.Location = new System.Drawing.Point(0, 445);
+            this.btnShowAdminMenu.Location = new System.Drawing.Point(0, 385);
             this.btnShowAdminMenu.Name = "btnShowAdminMenu";
             this.btnShowAdminMenu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnShowAdminMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -120,7 +163,7 @@ namespace PharmacyForms.Forms
             this.btnShoppingCart.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnShoppingCart.Image = global::PharmacyForms.Properties.Resources.shopping_cart__1_;
             this.btnShoppingCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
+            this.btnShoppingCart.Location = new System.Drawing.Point(0, 325);
             this.btnShoppingCart.Name = "btnShoppingCart";
             this.btnShoppingCart.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnShoppingCart.Size = new System.Drawing.Size(220, 60);
@@ -130,26 +173,6 @@ namespace PharmacyForms.Forms
             this.btnShoppingCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShoppingCart.UseVisualStyleBackColor = true;
             this.btnShoppingCart.Click += new System.EventHandler(this.btnShoppingCart_Click);
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProfile.Image = global::PharmacyForms.Properties.Resources.value__1_;
-            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.Location = new System.Drawing.Point(0, 325);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnProfile.Size = new System.Drawing.Size(220, 60);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "   Профиль";
-            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // panelCategories
             // 
@@ -281,10 +304,30 @@ namespace PharmacyForms.Forms
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "Pharma";
             // 
+            // btnProfile
+            // 
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProfile.Image = global::PharmacyForms.Properties.Resources.value__1_;
+            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.Location = new System.Drawing.Point(6, 12);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(220, 60);
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.Text = "   Профиль";
+            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelTitleBar.Controls.Add(this.lblUserLogin);
+            this.panelTitleBar.Controls.Add(this.btnProfile);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
@@ -293,16 +336,21 @@ namespace PharmacyForms.Forms
             // 
             // lblUserLogin
             // 
+            this.lblUserLogin.AutoEllipsis = true;
             this.lblUserLogin.AutoSize = true;
             this.lblUserLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUserLogin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUserLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserLogin.Location = new System.Drawing.Point(585, 0);
+            this.lblUserLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUserLogin.Location = new System.Drawing.Point(545, 0);
+            this.lblUserLogin.Margin = new System.Windows.Forms.Padding(0);
             this.lblUserLogin.Name = "lblUserLogin";
-            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 20, 0);
-            this.lblUserLogin.Size = new System.Drawing.Size(135, 53);
+            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 60, 0);
+            this.lblUserLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblUserLogin.Size = new System.Drawing.Size(175, 53);
             this.lblUserLogin.TabIndex = 1;
             this.lblUserLogin.Text = "UserName";
+            this.lblUserLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
             // 
@@ -395,5 +443,7 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Label lblBelowCenterLogo;
         private System.Windows.Forms.Label lbbCenterLogo;
         private System.Windows.Forms.Panel panelCenterLogo;
+        private System.Windows.Forms.Button btnOrderHistory;
+        private System.Windows.Forms.Button btnOpenMonthReport;
     }
 }

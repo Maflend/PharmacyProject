@@ -98,12 +98,18 @@ namespace PharmacyForms
             ProductController controller = new ProductController();
             if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
             {
-                Product payProduct = controller.GetById(currentProduct.Id);
-                if (payProduct != null)
+                if(currentProduct.Quantity != 0)
                 {
-                    PurchaseForm purchaseForm = new PurchaseForm(payProduct);
-                    purchaseForm.ShowDialog();
+                    Product payProduct = controller.GetById(currentProduct.Id);
+                    if (payProduct != null)
+                    {
+                        PurchaseForm purchaseForm = new PurchaseForm(payProduct);
+                        purchaseForm.ShowDialog();
+                    }
                 }
+                else
+                    MessageBox.Show("Товара нет в наличии");
+
             }
             if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete")
             {
@@ -177,6 +183,16 @@ namespace PharmacyForms
             List<Product> products = controller.FindByName(productName, currentCategory);
             if (products != null)
                 dgvProduct.DataSource = products;
+        }
+
+        private void btnAddproduct_Click(object sender, EventArgs e)
+        {
+            AddProductForm addProductForm = new AddProductForm(currentCategory);
+            addProductForm.ShowDialog();
+            if (addProductForm.DialogResult == DialogResult.OK)
+            {
+                SetDataGrid();
+            }
         }
     }
 }

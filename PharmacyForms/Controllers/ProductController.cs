@@ -23,10 +23,19 @@ namespace PharmacyForms.Controllers
             var products =  db.Products.Where(p => p.Category.Categories == categories).ToList();
             return products; 
         }
-        public void Post (Product product)
+        public bool Post (Product product)
         {
-            db.Products.Add(product);
-            db.SaveChanges();
+            if(product != null)
+            {
+                if(!db.Products.Any(p=>p.Name == product.Name))
+                {
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            return false;
         }
         public bool Delete (int id)
         {
