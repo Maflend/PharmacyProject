@@ -32,12 +32,25 @@ namespace PharmacyForms.Forms
                     OrderController controller = new OrderController();
                     if (controller.Post(order))
                     {
+                        UpdateQuantityInProductsAfterSale();
                         SaleStatic.Sales = new List<Sale>();
                         MessageBox.Show("Продукт куплен");
                         SetData();
                     }
                 }
             }
+        }
+        private void UpdateQuantityInProductsAfterSale()
+        {
+            ProductController controller = new ProductController();
+            var products = SaleStatic.Sales.Select(s => s.Product).ToList();
+            var sales = SaleStatic.Sales.Select(s => s).ToList();
+            foreach(var sale in sales)
+            {
+                sale.Product.Quantity = sale.Product.Quantity - sale.Quantity;
+                controller.Update(sale.Product);
+            }
+           
         }
         private void SetData()
         {

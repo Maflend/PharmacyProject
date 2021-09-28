@@ -37,7 +37,7 @@ namespace PharmacyForms.Forms
             startForm = new StartForm(this);
             startForm.ShowDialog();
             if (CurrentUserStatic.Login!= null)
-                lblUserLogin.Text =   CurrentUserStatic.Login;
+                lblUserLogin.Text = CurrentUserStatic.Login;
             if(CurrentUserStatic.Role == Roles.Admin)
             {
                 btnShowAdminMenu.Visible = true;

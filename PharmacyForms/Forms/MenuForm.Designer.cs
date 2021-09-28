@@ -316,18 +316,20 @@ namespace PharmacyForms.Forms
             // 
             // lblUserLogin
             // 
+            this.lblUserLogin.AutoEllipsis = true;
+            this.lblUserLogin.AutoSize = true;
             this.lblUserLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUserLogin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUserLogin.ForeColor = System.Drawing.SystemColors.Control;
             this.lblUserLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUserLogin.Location = new System.Drawing.Point(552, 0);
+            this.lblUserLogin.Location = new System.Drawing.Point(545, 0);
             this.lblUserLogin.Margin = new System.Windows.Forms.Padding(0);
             this.lblUserLogin.Name = "lblUserLogin";
-            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 20, 0);
+            this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 60, 0);
             this.lblUserLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblUserLogin.Size = new System.Drawing.Size(168, 80);
+            this.lblUserLogin.Size = new System.Drawing.Size(175, 53);
             this.lblUserLogin.TabIndex = 1;
-            this.lblUserLogin.Text = "     UserName";
+            this.lblUserLogin.Text = "UserName";
             this.lblUserLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
@@ -391,6 +393,7 @@ namespace PharmacyForms.Forms
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.panelCenterLogo.ResumeLayout(false);
             this.panelCenterLogo.PerformLayout();
