@@ -9,11 +9,12 @@ namespace PharmacyForms.Controllers
 {
     public class OrderController
     {
+        PharmacyContext db = new PharmacyContext();
         public bool Post(Order order)
         {
             var user = ContextStatic.PharmacyContext.Users.FirstOrDefault(i => i.Id == CurrentUserStatic.Id);
-            var sale = SaleStatic.Sales.Select(l=>l);
-            if (user != null) 
+            var sale = SaleStatic.Sales.Select(l => l);
+            if (user != null)
             {
                 Order or = new Order();
                 or.Sales = SaleStatic.Sales;
@@ -24,6 +25,15 @@ namespace PharmacyForms.Controllers
                 return true;
             }
             return false;
+        }
+        public List<Order> GetAll()
+        {
+            //var order = db.Orders.Where(o => o.User.Login == CurrentUserStatic.Login).SelectMany(o => o.Sales, (o, s) => new { o, s }).Select(os => os).ToList();
+            var order = db.Orders.Where(o => o.User.Login == CurrentUserStatic.Login).Select(o => o).ToList();
+            if (order != null)
+                return order;
+            return null;
+
         }
     }
 }

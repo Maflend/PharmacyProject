@@ -30,6 +30,7 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnOrderHistory = new System.Windows.Forms.Button();
             this.btnShowAdminMenu = new System.Windows.Forms.Button();
             this.btnChangeUser = new System.Windows.Forms.Button();
             this.btnShoppingCart = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@ namespace PharmacyForms.Forms
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnOrderHistory);
             this.panelMenu.Controls.Add(this.btnShowAdminMenu);
             this.panelMenu.Controls.Add(this.btnChangeUser);
             this.panelMenu.Controls.Add(this.btnShoppingCart);
@@ -72,6 +74,27 @@ namespace PharmacyForms.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 653);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnOrderHistory
+            // 
+            this.btnOrderHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrderHistory.FlatAppearance.BorderSize = 0;
+            this.btnOrderHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderHistory.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOrderHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOrderHistory.Image = global::PharmacyForms.Properties.Resources.time_8_32;
+            this.btnOrderHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderHistory.Location = new System.Drawing.Point(0, 505);
+            this.btnOrderHistory.Name = "btnOrderHistory";
+            this.btnOrderHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnOrderHistory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOrderHistory.Size = new System.Drawing.Size(220, 60);
+            this.btnOrderHistory.TabIndex = 8;
+            this.btnOrderHistory.Text = "   История заказов";
+            this.btnOrderHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrderHistory.UseVisualStyleBackColor = true;
+            this.btnOrderHistory.Click += new System.EventHandler(this.btnOrderHistory_Click);
             // 
             // btnShowAdminMenu
             // 
@@ -293,16 +316,19 @@ namespace PharmacyForms.Forms
             // 
             // lblUserLogin
             // 
-            this.lblUserLogin.AutoSize = true;
             this.lblUserLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUserLogin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUserLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserLogin.Location = new System.Drawing.Point(585, 0);
+            this.lblUserLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUserLogin.Location = new System.Drawing.Point(552, 0);
+            this.lblUserLogin.Margin = new System.Windows.Forms.Padding(0);
             this.lblUserLogin.Name = "lblUserLogin";
             this.lblUserLogin.Padding = new System.Windows.Forms.Padding(0, 23, 20, 0);
-            this.lblUserLogin.Size = new System.Drawing.Size(135, 53);
+            this.lblUserLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblUserLogin.Size = new System.Drawing.Size(168, 80);
             this.lblUserLogin.TabIndex = 1;
-            this.lblUserLogin.Text = "UserName";
+            this.lblUserLogin.Text = "     UserName";
+            this.lblUserLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
             // 
@@ -365,7 +391,6 @@ namespace PharmacyForms.Forms
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.panelCenterLogo.ResumeLayout(false);
             this.panelCenterLogo.PerformLayout();
@@ -395,5 +420,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Label lblBelowCenterLogo;
         private System.Windows.Forms.Label lbbCenterLogo;
         private System.Windows.Forms.Panel panelCenterLogo;
+        private System.Windows.Forms.Button btnOrderHistory;
     }
 }

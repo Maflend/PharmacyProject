@@ -37,7 +37,7 @@ namespace PharmacyForms.Forms
             startForm = new StartForm(this);
             startForm.ShowDialog();
             if (CurrentUserStatic.Login!= null)
-                lblUserLogin.Text = CurrentUserStatic.Login;
+                lblUserLogin.Text =   CurrentUserStatic.Login;
             if(CurrentUserStatic.Role == Roles.Admin)
             {
                 btnShowAdminMenu.Visible = true;
@@ -155,6 +155,13 @@ namespace PharmacyForms.Forms
         {
             hideSubMenu();
             OpenChildForm(new UserControlForm(),sender);
+            ActivateButton(sender);
+        }
+
+        private void btnOrderHistory_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new OrderHistoryForm(), sender);
             ActivateButton(sender);
         }
     }
