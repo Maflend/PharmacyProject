@@ -66,15 +66,15 @@ namespace PharmacyForms
         {
             ProductController prod = new ProductController();
             var products = prod.GetByCategory(currentCategory);
-            dgvProduct.DataSource = products;           
+            dgvProduct.DataSource = products;
+            dgvProduct.Columns["Id"].Visible = false;
+            dgvProduct.Columns["PurchasingPrice"].Visible = false;
+            dgvProduct.Columns["Category"].Visible = false;
             dgvProduct.Columns["Name"].HeaderText = "Наименование";
             dgvProduct.Columns["Description"].HeaderText = "Описание";
             dgvProduct.Columns["Quantity"].HeaderText = "Количество";
-            dgvProduct.Columns["RetailPrice"].HeaderText = "Цена";
+            dgvProduct.Columns["RetailPrice"].HeaderText = "Цена";           
             dgvProduct.Columns["PurchasingPrice"].HeaderText = "Закупочная цена";
-            dgvProduct.Columns["Category"].Visible = false;
-            dgvProduct.Columns["Id"].Visible = false;
-            dgvProduct.Columns["PurchasingPrice"].Visible = false;
             if (currentRole == Roles.Director)
             {
                 dgvProduct.Columns["PurchasingPrice"].Visible = true;
@@ -95,42 +95,46 @@ namespace PharmacyForms
                 currentProduct.PurchasingPrice = p.PurchasingPrice;
                 currentProduct.RetailPrice = p.RetailPrice;
             }
-            ProductController controller = new ProductController();
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
+            if(currentRole != Roles.Guest)
             {
-                if(currentProduct.Quantity != 0)
+                ProductController controller = new ProductController();
+                if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
                 {
-                    Product payProduct = controller.GetById(currentProduct.Id);
-                    if (payProduct != null)
+                    if (currentProduct.Quantity != 0)
                     {
-                        PurchaseForm purchaseForm = new PurchaseForm(payProduct);
-                        purchaseForm.ShowDialog();
+                        Product payProduct = controller.GetById(currentProduct.Id);
+                        if (payProduct != null)
+                        {
+                            PurchaseForm purchaseForm = new PurchaseForm(payProduct);
+                            purchaseForm.ShowDialog();
+                        }
+                    }
+                    else
+                        MessageBox.Show("Товара нет в наличии");
+
+                }
+                if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    if (MessageBox.Show("Подтвердите удаление записи", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        bool isDelete = controller.Delete(currentProduct.Id);
+                        if (isDelete)
+                        {
+                            SetDataGrid();
+                            MessageBox.Show("Удалено");
+                        }
                     }
                 }
-                else
-                    MessageBox.Show("Товара нет в наличии");
-
-            }
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete")
-            {
-                if (MessageBox.Show("Подтвердите удаление записи","Подтверждение",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                if (dgvProduct.Columns[e.ColumnIndex].Name == "Update" && e.RowIndex < dgvProduct.RowCount)
                 {
-                    bool isDelete = controller.Delete(currentProduct.Id);
-                    if (isDelete)
+                    UpdateProductForm upProductForm = new UpdateProductForm(currentProduct);
+                    if (upProductForm.ShowDialog() == DialogResult.OK)
                     {
                         SetDataGrid();
-                        MessageBox.Show("Удалено");
-                    } 
+                    }
                 }
             }
-            if (dgvProduct.Columns[e.ColumnIndex].Name == "Update" && e.RowIndex < dgvProduct.RowCount)
-            {
-                UpdateProductForm upProductForm = new UpdateProductForm(currentProduct);
-                if (upProductForm.ShowDialog() == DialogResult.OK)
-                {
-                    SetDataGrid();
-                }
-            }
+            
         }
         private Product CreateProductFromRowInDataGridView(object sender,DataGridViewCellEventArgs e)
         {
@@ -143,8 +147,8 @@ namespace PharmacyForms
                     product.Name = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
                     product.Description = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
                     product.Quantity = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString());
-                    product.RetailPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString());
-                    product.PurchasingPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    product.PurchasingPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    product.RetailPrice = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
                     return product;
                 }
                
@@ -158,8 +162,8 @@ namespace PharmacyForms
                     product.Name = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
                     product.Description = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
                     product.Quantity = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
-                    product.RetailPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    product.PurchasingPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
+                    product.PurchasingPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    product.RetailPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
                     return product;
                 }
             }

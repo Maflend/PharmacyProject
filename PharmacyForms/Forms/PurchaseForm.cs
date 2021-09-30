@@ -26,8 +26,6 @@ namespace PharmacyForms.Forms
        
         private void btnBuy_Click(object sender, EventArgs e)
         {
-
-
             if (int.TryParse(tbQuantity.Text, out int quantity))
             {
                 if (quantity <= currentProduct.Quantity )
@@ -45,11 +43,8 @@ namespace PharmacyForms.Forms
                     else
                     {
                         Sale sale = new Sale() { Product = currentProduct, Quantity = quantity };
-                        //ContextStatic.PharmacyContext.Sales.Add(sale);
                         SaleStatic.Sales.Add(sale);
                     }
-
-                   
                     this.DialogResult = DialogResult.Retry;
                 }
                 else

@@ -80,11 +80,11 @@ namespace PharmacyForms.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 129);
+            this.label1.Location = new System.Drawing.Point(2, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(101, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Цена оптовая";
+            this.label1.Text = "Цена закупочная";
             // 
             // lblRetailPrice
             // 

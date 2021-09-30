@@ -55,7 +55,7 @@ namespace PharmacyForms.Forms
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowTemplate.Height = 25;
-            this.dgvOrders.Size = new System.Drawing.Size(704, 283);
+            this.dgvOrders.Size = new System.Drawing.Size(704, 277);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
@@ -65,11 +65,11 @@ namespace PharmacyForms.Forms
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSales.Location = new System.Drawing.Point(0, 283);
+            this.dgvSales.Location = new System.Drawing.Point(0, 277);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
             this.dgvSales.RowTemplate.Height = 25;
-            this.dgvSales.Size = new System.Drawing.Size(704, 251);
+            this.dgvSales.Size = new System.Drawing.Size(704, 257);
             this.dgvSales.TabIndex = 1;
             // 
             // OrderHistoryForm

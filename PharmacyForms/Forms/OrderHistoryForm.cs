@@ -35,7 +35,7 @@ namespace PharmacyForms.Forms
 
         private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >0)
+            if(e.RowIndex >=0)
             {
                 Order order = new Order();
                 order.Id = (int)dgvOrders.Rows[e.RowIndex].Cells[0].Value;

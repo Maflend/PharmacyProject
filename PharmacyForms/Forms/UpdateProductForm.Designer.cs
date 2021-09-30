@@ -113,7 +113,7 @@ namespace PharmacyForms.Forms
             // lblRetailPrice
             // 
             this.lblRetailPrice.AutoSize = true;
-            this.lblRetailPrice.Location = new System.Drawing.Point(3, 109);
+            this.lblRetailPrice.Location = new System.Drawing.Point(0, 109);
             this.lblRetailPrice.Name = "lblRetailPrice";
             this.lblRetailPrice.Size = new System.Drawing.Size(97, 15);
             this.lblRetailPrice.TabIndex = 1;
@@ -122,11 +122,11 @@ namespace PharmacyForms.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 138);
+            this.label1.Location = new System.Drawing.Point(0, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(101, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Цена оптовая";
+            this.label1.Text = "Цена закупочная";
             // 
             // tbPurchasingPrice
             // 

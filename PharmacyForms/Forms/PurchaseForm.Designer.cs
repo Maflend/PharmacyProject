@@ -73,12 +73,12 @@ namespace PharmacyForms.Forms
             // 
             // btnBuy
             // 
-            this.btnBuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnBuy.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnBuy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuy.Location = new System.Drawing.Point(78, 86);
+            this.btnBuy.Location = new System.Drawing.Point(0, 92);
             this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(153, 44);
+            this.btnBuy.Size = new System.Drawing.Size(309, 50);
             this.btnBuy.TabIndex = 3;
             this.btnBuy.Text = "Купить";
             this.btnBuy.UseVisualStyleBackColor = false;

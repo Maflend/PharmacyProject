@@ -55,7 +55,6 @@ C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-win
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.StartForm.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Properties.Resources.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.ProductForm.resources
-C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.ProfileForm.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.MenuForm.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.SignUpForm.resources
 C:\Users\Maflend\source\repos\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.csproj.AssemblyReference.cache
