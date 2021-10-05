@@ -67,6 +67,11 @@ namespace PharmacyForms.Controllers
             return false;
             
         }
+        public List<User> FindByLogin(string input)
+        {
+            var users = db.Users.Where(u => u.Login.StartsWith(input)).ToList();
+            return users;
+        }
         public bool Update(User user)
         {
             var currentuser = db.Users.FirstOrDefault(u=>u.Id == user.Id);

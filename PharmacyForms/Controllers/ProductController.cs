@@ -69,12 +69,14 @@ namespace PharmacyForms.Controllers
         }
         public List<Product> FindByName(string name, Categories category)
         {
-
             var products = db.Products.Where(p => p.Name.StartsWith(name) && p.Category.Categories == category).Select(p => p).ToList(); ;
             if(products!= null)
                 return products;
             return null;
-           
         }
+        //public List<Product> OrderBy(string input)
+        //{
+        //    var products = db.Products.OrderBy(i=>i.)
+        //}
     }
 }

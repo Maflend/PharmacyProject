@@ -45,6 +45,7 @@ namespace PharmacyForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbPasswordShow = new System.Windows.Forms.CheckBox();
             this.panelBar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -241,11 +242,23 @@ namespace PharmacyForms
             this.label3.TabIndex = 18;
             this.label3.Text = "Окно авторизации";
             // 
+            // cbPasswordShow
+            // 
+            this.cbPasswordShow.AutoSize = true;
+            this.cbPasswordShow.Location = new System.Drawing.Point(429, 124);
+            this.cbPasswordShow.Name = "cbPasswordShow";
+            this.cbPasswordShow.Size = new System.Drawing.Size(119, 19);
+            this.cbPasswordShow.TabIndex = 18;
+            this.cbPasswordShow.Text = "Показать пароль";
+            this.cbPasswordShow.UseVisualStyleBackColor = true;
+            this.cbPasswordShow.CheckedChanged += new System.EventHandler(this.cbPasswordShow_CheckedChanged);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 228);
+            this.Controls.Add(this.cbPasswordShow);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBar);
@@ -286,6 +299,7 @@ namespace PharmacyForms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLoginAsGuest;
+        private System.Windows.Forms.CheckBox cbPasswordShow;
     }
 }
 

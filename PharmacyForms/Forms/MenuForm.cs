@@ -25,25 +25,42 @@ namespace PharmacyForms.Forms
             InitializeComponent();
             random = new Random();
             panelCategories.Visible = false;
-            btnShowAdminMenu.Visible = false;
-            btnOpenMonthReport.Visible = false;
         }
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-          // AddItemsInDataBase add = new AddItemsInDataBase();
-          // add.Add();
+           //AddItemsInDataBase add = new AddItemsInDataBase();
+           //add.Add();
             // ...
             startForm = new StartForm(this);
             startForm.ShowDialog();
             if (CurrentUserStatic.Login!= null)
                 lblUserLogin.Text = CurrentUserStatic.Login;
+            if(CurrentUserStatic.Role == Roles.Guest || CurrentUserStatic.Role == Roles.Stuff)
+            {
+                btnOrderHistory.Visible = false;
+                btnShoppingCart.Visible = false;
+                btnShowAdminMenu.Visible = false;
+                btnMonthReport.Visible = false;
+            }
             if(CurrentUserStatic.Role == Roles.Admin)
             {
-                btnShowAdminMenu.Visible = true;
+                btnCategories.Visible = false;
+                btnOrderHistory.Visible = false;
+                btnShoppingCart.Visible = false;
+                btnMonthReport.Visible = false;
             }
             if (CurrentUserStatic.Role == Roles.Director)
-                btnOpenMonthReport.Visible = true;
+            {
+                btnOrderHistory.Visible = false;
+                btnShoppingCart.Visible = false;
+                btnShowAdminMenu.Visible = false;
+            }   
+            if(CurrentUserStatic.Role == Roles.Client)
+            {
+                btnShowAdminMenu.Visible = false;
+                btnMonthReport.Visible = false;
+            }
         }
         private void OpenChildForm(Form childForm,object btnSender)
         {
@@ -59,8 +76,6 @@ namespace PharmacyForms.Forms
             this.panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-           
-            
         }
         private Color SelectThemeColor()
         {

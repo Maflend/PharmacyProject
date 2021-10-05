@@ -17,7 +17,7 @@ namespace PharmacyForms
 {
     public partial class StartForm : Form
     {
-    
+        private bool isShowPassword = false;
         private Form parentsForm;
         public StartForm()
         {
@@ -54,7 +54,8 @@ namespace PharmacyForms
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            if(SaleStatic.Sales != null)
+            tbPassword.UseSystemPasswordChar = true;
+            if (SaleStatic.Sales != null)
                 SaleStatic.Sales.Clear();
             lblValidLogin.Text = "";
             lblValidPassword.Text = "";
@@ -72,5 +73,22 @@ namespace PharmacyForms
             CurrentUserStatic.Role = Roles.Guest;
             this.Close();
         }
+
+        private void rbPasswordShow_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void cbPasswordShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPasswordShow.Checked == true)
+                tbPassword.UseSystemPasswordChar = false;
+            else
+                tbPassword.UseSystemPasswordChar = true;
+        
+
+
     }
+}
 }

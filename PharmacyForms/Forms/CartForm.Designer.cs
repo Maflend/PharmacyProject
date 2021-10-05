@@ -34,6 +34,7 @@ namespace PharmacyForms.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalCost = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaleClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +89,7 @@ namespace PharmacyForms.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSaleClear);
             this.panel1.Controls.Add(this.btnBuy);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblTotalCost);
@@ -96,6 +98,20 @@ namespace PharmacyForms.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 59);
             this.panel1.TabIndex = 3;
+            // 
+            // btnSaleClear
+            // 
+            this.btnSaleClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaleClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnSaleClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSaleClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSaleClear.Location = new System.Drawing.Point(341, 0);
+            this.btnSaleClear.Name = "btnSaleClear";
+            this.btnSaleClear.Size = new System.Drawing.Size(183, 60);
+            this.btnSaleClear.TabIndex = 3;
+            this.btnSaleClear.Text = "Очистить";
+            this.btnSaleClear.UseVisualStyleBackColor = false;
+            this.btnSaleClear.Click += new System.EventHandler(this.btnSaleClear_Click);
             // 
             // CartForm
             // 
@@ -121,5 +137,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalCost;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSaleClear;
     }
 }

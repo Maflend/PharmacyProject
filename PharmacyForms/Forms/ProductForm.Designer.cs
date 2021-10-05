@@ -35,6 +35,8 @@ namespace PharmacyForms
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddproduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.cbOrderBy = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelActionBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +46,8 @@ namespace PharmacyForms
             this.panelActionBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelActionBar.Controls.Add(this.label2);
+            this.panelActionBar.Controls.Add(this.cbOrderBy);
             this.panelActionBar.Controls.Add(this.btnResetFindProduct);
             this.panelActionBar.Controls.Add(this.tbFindName);
             this.panelActionBar.Controls.Add(this.label1);
@@ -88,7 +92,7 @@ namespace PharmacyForms
             this.btnAddproduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnAddproduct.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddproduct.Location = new System.Drawing.Point(519, 3);
+            this.btnAddproduct.Location = new System.Drawing.Point(519, 65);
             this.btnAddproduct.Name = "btnAddproduct";
             this.btnAddproduct.Size = new System.Drawing.Size(182, 51);
             this.btnAddproduct.TabIndex = 0;
@@ -104,13 +108,31 @@ namespace PharmacyForms
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(10, 125);
+            this.dgvProduct.Location = new System.Drawing.Point(0, 144);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowTemplate.Height = 25;
-            this.dgvProduct.Size = new System.Drawing.Size(682, 397);
+            this.dgvProduct.Size = new System.Drawing.Size(704, 388);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            // 
+            // cbOrderBy
+            // 
+            this.cbOrderBy.FormattingEnabled = true;
+            this.cbOrderBy.Location = new System.Drawing.Point(176, 65);
+            this.cbOrderBy.Name = "cbOrderBy";
+            this.cbOrderBy.Size = new System.Drawing.Size(121, 23);
+            this.cbOrderBy.TabIndex = 4;
+            this.cbOrderBy.SelectedIndexChanged += new System.EventHandler(this.cbOrderBy_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Сортировать по :\r\n";
             // 
             // ProductForm
             // 
@@ -136,6 +158,8 @@ namespace PharmacyForms
         private System.Windows.Forms.TextBox tbFindName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnResetFindProduct;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbOrderBy;
     }
 }
 

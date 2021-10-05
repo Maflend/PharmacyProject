@@ -31,7 +31,7 @@ namespace PharmacyForms.Forms
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnOrderHistory = new System.Windows.Forms.Button();
-            this.btnOpenMonthReport = new System.Windows.Forms.Button();
+            this.btnMonthReport = new System.Windows.Forms.Button();
             this.btnShowAdminMenu = new System.Windows.Forms.Button();
             this.btnChangeUser = new System.Windows.Forms.Button();
             this.btnShoppingCart = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@ namespace PharmacyForms.Forms
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnOrderHistory);
-            this.panelMenu.Controls.Add(this.btnOpenMonthReport);
+            this.panelMenu.Controls.Add(this.btnMonthReport);
             this.panelMenu.Controls.Add(this.btnShowAdminMenu);
             this.panelMenu.Controls.Add(this.btnChangeUser);
             this.panelMenu.Controls.Add(this.btnShoppingCart);
@@ -96,25 +96,25 @@ namespace PharmacyForms.Forms
             this.btnOrderHistory.UseVisualStyleBackColor = true;
             this.btnOrderHistory.Click += new System.EventHandler(this.btnOrderHistory_Click);
             // 
-            // btnOpenMonthReport
+            // btnMonthReport
             // 
-            this.btnOpenMonthReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOpenMonthReport.FlatAppearance.BorderSize = 0;
-            this.btnOpenMonthReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenMonthReport.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOpenMonthReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnOpenMonthReport.Image = global::PharmacyForms.Properties.Resources.value__1_;
-            this.btnOpenMonthReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenMonthReport.Location = new System.Drawing.Point(0, 445);
-            this.btnOpenMonthReport.Name = "btnOpenMonthReport";
-            this.btnOpenMonthReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnOpenMonthReport.Size = new System.Drawing.Size(220, 60);
-            this.btnOpenMonthReport.TabIndex = 4;
-            this.btnOpenMonthReport.Text = "   Ежемесячный отчет";
-            this.btnOpenMonthReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenMonthReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOpenMonthReport.UseVisualStyleBackColor = true;
-            this.btnOpenMonthReport.Click += new System.EventHandler(this.btnOpenMonthReport_Click);
+            this.btnMonthReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMonthReport.FlatAppearance.BorderSize = 0;
+            this.btnMonthReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonthReport.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMonthReport.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMonthReport.Image = global::PharmacyForms.Properties.Resources.value__1_;
+            this.btnMonthReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMonthReport.Location = new System.Drawing.Point(0, 445);
+            this.btnMonthReport.Name = "btnMonthReport";
+            this.btnMonthReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMonthReport.Size = new System.Drawing.Size(220, 60);
+            this.btnMonthReport.TabIndex = 4;
+            this.btnMonthReport.Text = "   Ежемесячный отчет";
+            this.btnMonthReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMonthReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMonthReport.UseVisualStyleBackColor = true;
+            this.btnMonthReport.Click += new System.EventHandler(this.btnOpenMonthReport_Click);
             // 
             // btnShowAdminMenu
             // 
@@ -423,6 +423,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Label lbbCenterLogo;
         private System.Windows.Forms.Panel panelCenterLogo;
         private System.Windows.Forms.Button btnOrderHistory;
-        private System.Windows.Forms.Button btnOpenMonthReport;
+        private System.Windows.Forms.Button btnMonthReport;
     }
 }

@@ -62,6 +62,7 @@ namespace PharmacyForms.Forms
         }
         private void SetDataGrid()
         {
+            tbFindName.Text = "";
             UserController controller = new UserController();
             var users = controller.GetAll();
             dgvUsers.DataSource = users;
@@ -84,6 +85,19 @@ namespace PharmacyForms.Forms
             }
             return null;
         }
-       
+
+        private void tbFindName_TextChanged(object sender, EventArgs e)
+        {
+            UserController controller = new UserController();
+            string input = tbFindName.Text;
+            var users = controller.FindByLogin(input);
+            dgvUsers.DataSource = users;
+        }
+
+        private void btnResetFindUser_Click(object sender, EventArgs e)
+        {
+            tbFindName.Text = "";
+            SetDataGrid();
+        }
     }
 }

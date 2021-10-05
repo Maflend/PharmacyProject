@@ -17,7 +17,9 @@ namespace PharmacyForms
     {
         private Categories currentCategory;
         private Roles currentRole;
+        private List<Product> currentProducts;
         public List<Sale> Sales = new List<Sale>();
+       
         public ProductForm()
         {
             InitializeComponent();
@@ -30,6 +32,8 @@ namespace PharmacyForms
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            cbOrderBy.DataSource = new List<string> {"", "Продукт", "Цена" };
+            cbOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             dgvProduct.AllowUserToAddRows = false;
             SetDataGrid();
             AddButtonsInDataGridView();
@@ -42,6 +46,7 @@ namespace PharmacyForms
                 btnAddproduct.Visible = false;
             }
         }
+
         private void AddButtonsInDataGridView()
         {
             DataGridViewButtonColumn buttonPay = new DataGridViewButtonColumn();
@@ -50,9 +55,12 @@ namespace PharmacyForms
             buttonPay.UseColumnTextForButtonValue = true;
             buttonDelete.UseColumnTextForButtonValue = true;
             buttonUpdate.UseColumnTextForButtonValue = true;
-            buttonPay.Name = "Pay";
-            buttonPay.Text = "Купить";
-            dgvProduct.Columns.Add(buttonPay);
+            if(currentRole != Roles.Stuff && currentRole != Roles.Director)
+            {
+                buttonPay.Name = "Pay";
+                buttonPay.Text = "Купить";
+                dgvProduct.Columns.Add(buttonPay);
+            }
             if (currentRole == Roles.Stuff || currentRole == Roles.Director || currentRole == Roles.Admin)
             {
                 buttonDelete.Name = "Delete";
@@ -65,8 +73,8 @@ namespace PharmacyForms
         private void SetDataGrid()
         {
             ProductController prod = new ProductController();
-            var products = prod.GetByCategory(currentCategory);
-            dgvProduct.DataSource = products;
+            currentProducts = prod.GetByCategory(currentCategory);
+            dgvProduct.DataSource = currentProducts;
             dgvProduct.Columns["Id"].Visible = false;
             dgvProduct.Columns["PurchasingPrice"].Visible = false;
             dgvProduct.Columns["Category"].Visible = false;
@@ -78,9 +86,14 @@ namespace PharmacyForms
             if (currentRole == Roles.Director)
             {
                 dgvProduct.Columns["PurchasingPrice"].Visible = true;
-            }   
+            }
+            cbOrderBy.SelectedIndex = 0;
         }
-      
+        private void SetDataGrid(List<Product> products)
+        {
+            dgvProduct.DataSource = products;
+        }
+
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -98,20 +111,22 @@ namespace PharmacyForms
             if(currentRole != Roles.Guest)
             {
                 ProductController controller = new ProductController();
-                if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
+                if (currentRole != Roles.Stuff && currentRole != Roles.Director)
                 {
-                    if (currentProduct.Quantity != 0)
+                    if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
                     {
-                        Product payProduct = controller.GetById(currentProduct.Id);
-                        if (payProduct != null)
+                        if (currentProduct.Quantity != 0)
                         {
-                            PurchaseForm purchaseForm = new PurchaseForm(payProduct);
-                            purchaseForm.ShowDialog();
+                            Product payProduct = controller.GetById(currentProduct.Id);
+                            if (payProduct != null)
+                            {
+                                PurchaseForm purchaseForm = new PurchaseForm(payProduct);
+                                purchaseForm.ShowDialog();
+                            }
                         }
+                        else
+                            MessageBox.Show("Товара нет в наличии");
                     }
-                    else
-                        MessageBox.Show("Товара нет в наличии");
-
                 }
                 if (dgvProduct.Columns[e.ColumnIndex].Name == "Delete")
                 {
@@ -133,8 +148,7 @@ namespace PharmacyForms
                         SetDataGrid();
                     }
                 }
-            }
-            
+            }           
         }
         private Product CreateProductFromRowInDataGridView(object sender,DataGridViewCellEventArgs e)
         {
@@ -153,17 +167,17 @@ namespace PharmacyForms
                 }
                
             }
-            if (currentRole == Roles.Stuff || currentRole == Roles.Director || currentRole == Roles.Admin)
+            if (currentRole == Roles.Stuff || currentRole == Roles.Director)
             {
 
                 if (e.ColumnIndex >= 0 && e.ColumnIndex <= 2 && e.RowIndex >= 0)
                 {
-                    product.Id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
-                    product.Name = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    product.Description = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    product.Quantity = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
-                    product.PurchasingPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    product.RetailPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
+                    product.Id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    product.Name = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    product.Description = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    product.Quantity = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    product.PurchasingPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    product.RetailPrice = Convert.ToDouble(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
                     return product;
                 }
             }
@@ -197,6 +211,27 @@ namespace PharmacyForms
             {
                 SetDataGrid();
             }
+        }
+
+        private void cbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbOrderBy.SelectedIndex;
+            if(index == 1)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.Name).ToList();
+                SetDataGrid(currentProducts);
+            } 
+            if(index == 2)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.RetailPrice).ToList();
+                SetDataGrid(currentProducts);
+            }
+            if(index == 0)
+            {
+                SetDataGrid();
+            }
+           
+
         }
     }
 }

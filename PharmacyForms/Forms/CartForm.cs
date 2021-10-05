@@ -77,5 +77,11 @@ namespace PharmacyForms.Forms
                 lblTotalCost.Text = "0";
             }
         }
+
+        private void btnSaleClear_Click(object sender, EventArgs e)
+        {
+            SaleStatic.Sales = new List<Sale>();
+            SetData();
+        }
     }
 }

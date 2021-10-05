@@ -29,6 +29,7 @@ namespace PharmacyForms.Forms
         {
             if(currentUser != null)
             {
+                cbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 cbRoles.DataSource = Enum.GetValues(typeof(Roles));
                 cbRoles.SelectedItem = currentUser.Role;
                 tbLogin.Text = currentUser.Login;
