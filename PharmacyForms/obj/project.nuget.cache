@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WUaXSw9gmBxmZBg1JYlU26NSsdOKqzWrbHeMQaLhBL53hs7z64v7HqRF1ohxZd9zdWqOnyjPNL3J8ZAuMHVFtg==",
+  "dgSpecHash": "aAQzOJqX4jvJ79tQDcHpwm3JuKIHlqAbuXmF6DWRT6XoCwAQeHkXxzlRF3z5+s5roNGDoi1mUpUHeQc8hBZKiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maflend\\source\\repos\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
+  "projectFilePath": "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maflend\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Maflend\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

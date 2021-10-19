@@ -77,10 +77,13 @@ namespace PharmacyForms.Controllers
             var currentuser = db.Users.FirstOrDefault(u=>u.Id == user.Id);
             if(currentuser != null)
             {
-                currentuser.Login = user.Login;
-                currentuser.Role = user.Role;
-                db.SaveChanges();
-                return true;
+                if(!db.Users.Any(u=>u.Login == user.Login))
+                {
+                    currentuser.Login = user.Login;
+                    currentuser.Role = user.Role;
+                    db.SaveChanges();
+                    return true;
+                }
             }
             return false;
            
@@ -88,7 +91,7 @@ namespace PharmacyForms.Controllers
         public bool Delete(int id)
         {
             var user = GetById(id);
-            if(user != null)
+            if(user != null && user.Role != Roles.Admin)
             {
                 db.Users.Remove(user);
                 db.SaveChanges();
