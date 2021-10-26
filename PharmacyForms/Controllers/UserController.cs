@@ -50,8 +50,8 @@ namespace PharmacyForms.Controllers
         /// <returns></returns>
         public User Login(string login, string password)
         {
-            var user = db.Users.Where(u => u.Login == login && u.Password == password).Select(u => u).SingleOrDefault();
-            return user;
+            var userWithLoginAndPassword = db.Users.Where(u => u.Login == login && u.Password == password).Select(u => u).SingleOrDefault();
+            return userWithLoginAndPassword;
         }
         /// <summary>
         /// If a user with such a login exists, it will return false.

@@ -36,14 +36,18 @@ namespace PharmacyForms.Forms
             startForm.ShowDialog();
             if (CurrentUserStatic.Login!= null)
                 lblUserLogin.Text = CurrentUserStatic.Login;
-            if(CurrentUserStatic.Role == Roles.Guest || CurrentUserStatic.Role == Roles.Stuff)
+            VisibleElements();
+        }
+        private void VisibleElements()
+        {
+            if (CurrentUserStatic.Role == Roles.Guest || CurrentUserStatic.Role == Roles.Stuff)
             {
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
             }
-            if(CurrentUserStatic.Role == Roles.Admin)
+            if (CurrentUserStatic.Role == Roles.Admin)
             {
                 btnCategories.Visible = false;
                 btnOrderHistory.Visible = false;
@@ -55,8 +59,8 @@ namespace PharmacyForms.Forms
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
-            }   
-            if(CurrentUserStatic.Role == Roles.Client)
+            }
+            if (CurrentUserStatic.Role == Roles.Client)
             {
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
@@ -116,23 +120,6 @@ namespace PharmacyForms.Forms
                 }
             }
         }
-
-        private void btnCategories_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelCategories);
-            ActivateButton(sender);
-            if(activeForm!= null)
-                activeForm.Close();
-            panelDesktop.Controls.Add(panelCenterLogo);
-        }
-        private void btnShoppingCart_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            CartForm cartForm = new CartForm();
-            OpenChildForm(cartForm, sender);
-            ActivateButton(sender);
-        }
-
         private void btnOpenProductForm_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -145,41 +132,51 @@ namespace PharmacyForms.Forms
             this.DialogResult = DialogResult.Retry;
             this.Close();
         }
-        public void hideSubMenu()
+        public void HideSubMenu()
         {
             if (panelCategories.Visible == true)
                 panelCategories.Visible = false;
         }
-        private void showSubMenu(Panel subMenu)
+        private void ShowSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
-                hideSubMenu();
+                HideSubMenu();
                 subMenu.Visible = true;
             }
             else
                 subMenu.Visible = false;
         }
 
-        private void btnShowAdminMenu_Click(object sender, EventArgs e)
+       
+        private void OpenChildForm_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
-            OpenChildForm(new UserControlForm(),sender);
+            HideSubMenu();
+            if (((Button)sender).Name == "btnCategories")
+            {
+                ShowSubMenu(panelCategories);
+                if (activeForm != null)
+                    activeForm.Close();
+                panelDesktop.Controls.Add(panelCenterLogo);
+            }
+            if(((Button)sender).Name == "btnShoppingCart")
+            {  
+                OpenChildForm(new CartForm(), sender);
+            }
+            if(((Button)sender).Name == "btnShowAdminMenu")
+            {
+                OpenChildForm(new UserControlForm(), sender);
+            }
+            if(((Button)sender).Name == "btnMonthReport")
+            {        
+                OpenChildForm(new MonthReportForm(), sender);      
+            }
+            if(((Button)sender).Name == "btnOrderHistory")
+            {     
+                OpenChildForm(new OrderHistoryForm(), sender);
+            }
             ActivateButton(sender);
-        }
 
-        private void btnOrderHistory_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            OpenChildForm(new OrderHistoryForm(), sender);
-            ActivateButton(sender);
-        }
-
-        private void btnOpenMonthReport_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            OpenChildForm(new MonthReportForm(), sender);
-            ActivateButton(sender);
         }
     }
 }
