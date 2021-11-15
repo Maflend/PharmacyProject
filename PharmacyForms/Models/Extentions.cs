@@ -10,7 +10,7 @@ namespace PharmacyForms.Models
     {
         Guest,
         Client,
-        Stuff,
+        Employee,
         Director,
         Admin
     }

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\Desktop\\Новая папка\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj": {}
+    "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\Desktop\\Новая папка\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj": {
+    "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\Desktop\\Новая папка\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
+        "projectUniqueName": "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
         "projectName": "PharmacyForms",
-        "projectPath": "C:\\Users\\Student\\Desktop\\Новая папка\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\Desktop\\Новая папка\\PharmacyProject\\PharmacyForms\\obj\\",
+        "projectPath": "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyProject\\PharmacyForms\\PharmacyForms.csproj",
+        "packagesPath": "C:\\Users\\Maflend\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Maflend\\Desktop\\PharmacyProject\\PharmacyProject\\PharmacyForms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maflend\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
@@ -59,6 +57,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -79,7 +85,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

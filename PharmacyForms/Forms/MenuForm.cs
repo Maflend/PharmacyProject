@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.IO;
 
 namespace PharmacyForms.Forms
 {
@@ -40,7 +42,7 @@ namespace PharmacyForms.Forms
         }
         private void VisibleElements()
         {
-            if (CurrentUserStatic.Role == Roles.Guest || CurrentUserStatic.Role == Roles.Stuff)
+            if (CurrentUserStatic.Role == Roles.Guest || CurrentUserStatic.Role == Roles.Employee)
             {
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
@@ -53,6 +55,8 @@ namespace PharmacyForms.Forms
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
                 btnMonthReport.Visible = false;
+                btnShowTutorial.Visible = false;
+                btnChangeUser.Dock = DockStyle.Bottom;
             }
             if (CurrentUserStatic.Role == Roles.Director)
             {
@@ -177,6 +181,21 @@ namespace PharmacyForms.Forms
             }
             ActivateButton(sender);
 
+        }
+
+        private void btnShowTutorial_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> tutorials = new Dictionary<string, string>();
+            string path = "Resources\\TutorialForApplication.json";
+            string jsonString = File.ReadAllText(path, Encoding.GetEncoding(1251));
+
+            tutorials = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
+            foreach(var tutorial in tutorials)
+            {
+                if(tutorial.Key == CurrentUserStatic.Role.ToString())
+                MessageBox.Show(tutorial.Value, "Справка по пользованию.");
+            }
+            
         }
     }
 }

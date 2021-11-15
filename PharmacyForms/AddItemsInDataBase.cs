@@ -22,9 +22,9 @@ namespace PharmacyForms
 
             User user1 = new User() { Login = "MaximSolnce", Password = "Top123123", Role = Roles.Client };
             User user2 = new User() { Login = "AlinkaMalinka", Password = "Kot123FDF23", Role = Roles.Director };
-            User user3 = new User() { Login = "BlueFilen", Password = "Rot333FF33", Role = Roles.Stuff };
-            User user5 = new User() { Login = "Amerika", Password = "GoGo12345", Role = Roles.Stuff };
-            User user6 = new User() { Login = "RusiOOOua", Password = "Tropolom123", Role = Roles.Stuff };
+            User user3 = new User() { Login = "BlueFilen", Password = "Rot333FF33", Role = Roles.Employee };
+            User user5 = new User() { Login = "Amerika", Password = "GoGo12345", Role = Roles.Employee };
+            User user6 = new User() { Login = "RusiOOOua", Password = "Tropolom123", Role = Roles.Employee };
             User user4 = new User() { Login = "PokermanSS", Password = "Dvorf12345", Role = Roles.Client };
             User userA = new User() { Login = "Admin", Password = "Admin", Role = Roles.Admin };
             db.Users.AddRange(user1, user2,user3 ,user4,user5,user6,userA);

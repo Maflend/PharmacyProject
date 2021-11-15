@@ -30,6 +30,7 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnShowTutorial = new System.Windows.Forms.Button();
             this.btnOrderHistory = new System.Windows.Forms.Button();
             this.btnMonthReport = new System.Windows.Forms.Button();
             this.btnShowAdminMenu = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@ namespace PharmacyForms.Forms
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnShowTutorial);
             this.panelMenu.Controls.Add(this.btnOrderHistory);
             this.panelMenu.Controls.Add(this.btnMonthReport);
             this.panelMenu.Controls.Add(this.btnShowAdminMenu);
@@ -74,6 +76,23 @@ namespace PharmacyForms.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(233, 653);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnShowTutorial
+            // 
+            this.btnShowTutorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowTutorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnShowTutorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnShowTutorial.FlatAppearance.BorderSize = 0;
+            this.btnShowTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowTutorial.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnShowTutorial.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnShowTutorial.Location = new System.Drawing.Point(164, 608);
+            this.btnShowTutorial.Name = "btnShowTutorial";
+            this.btnShowTutorial.Size = new System.Drawing.Size(69, 45);
+            this.btnShowTutorial.TabIndex = 10;
+            this.btnShowTutorial.Text = "Справка";
+            this.btnShowTutorial.UseVisualStyleBackColor = false;
+            this.btnShowTutorial.Click += new System.EventHandler(this.btnShowTutorial_Click);
             // 
             // btnOrderHistory
             // 
@@ -142,16 +161,17 @@ namespace PharmacyForms.Forms
             // 
             // btnChangeUser
             // 
+            this.btnChangeUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnChangeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnChangeUser.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnChangeUser.FlatAppearance.BorderSize = 0;
-            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangeUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnChangeUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnChangeUser.Location = new System.Drawing.Point(0, 602);
+            this.btnChangeUser.Location = new System.Drawing.Point(0, 608);
             this.btnChangeUser.Name = "btnChangeUser";
-            this.btnChangeUser.Size = new System.Drawing.Size(233, 51);
+            this.btnChangeUser.Size = new System.Drawing.Size(164, 45);
             this.btnChangeUser.TabIndex = 6;
             this.btnChangeUser.Text = "Сменить пользователя";
             this.btnChangeUser.UseVisualStyleBackColor = false;
@@ -429,5 +449,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Panel panelCenterLogo;
         private System.Windows.Forms.Button btnOrderHistory;
         private System.Windows.Forms.Button btnMonthReport;
+        private System.Windows.Forms.Button btnShowTutorial;
     }
 }

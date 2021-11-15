@@ -55,13 +55,13 @@ namespace PharmacyForms
             buttonPay.UseColumnTextForButtonValue = true;
             buttonDelete.UseColumnTextForButtonValue = true;
             buttonUpdate.UseColumnTextForButtonValue = true;
-            if(currentRole != Roles.Stuff && currentRole != Roles.Director)
+            if(currentRole != Roles.Employee && currentRole != Roles.Director)
             {
                 buttonPay.Name = "Pay";
                 buttonPay.Text = "Купить";
                 dgvProduct.Columns.Add(buttonPay);
             }
-            if (currentRole == Roles.Stuff || currentRole == Roles.Director || currentRole == Roles.Admin)
+            if (currentRole == Roles.Employee || currentRole == Roles.Director || currentRole == Roles.Admin)
             {
                 buttonDelete.Name = "Delete";
                 buttonDelete.Text = "Удалить";
@@ -111,7 +111,7 @@ namespace PharmacyForms
             if(currentRole != Roles.Guest)
             {
                 ProductController controller = new ProductController();
-                if (currentRole != Roles.Stuff && currentRole != Roles.Director)
+                if (currentRole != Roles.Employee && currentRole != Roles.Director)
                 {
                     if (dgvProduct.Columns[e.ColumnIndex].Name == "Pay")
                     {
@@ -167,7 +167,7 @@ namespace PharmacyForms
                 }
                
             }
-            if (currentRole == Roles.Stuff || currentRole == Roles.Director)
+            if (currentRole == Roles.Employee || currentRole == Roles.Director)
             {
 
                 if (e.ColumnIndex >= 0 && e.ColumnIndex <= 2 && e.RowIndex >= 0)
