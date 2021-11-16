@@ -400,3 +400,4 @@ InteropTests/NativeTests/out
 
 ## My Dont Ignore
 !PharmacyForms\PharmacyForms\bin\Debug\net5.0-windows\Resources\*
+!TutorialForApplication.json
