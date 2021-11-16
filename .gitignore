@@ -9,6 +9,15 @@
 *.userosscache
 *.sln.docstates
 
+
+
+
+
+
+
+
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -388,3 +397,6 @@ Temporary Items
 InteropTests/NativeTests/out
 /src/System.Windows.Forms/src/comctl32.dll
 *.received.*
+
+## My Dont Ignore
+!PharmacyForms\PharmacyForms\bin\Debug\net5.0-windows\Resources\*

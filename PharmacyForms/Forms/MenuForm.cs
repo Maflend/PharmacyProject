@@ -121,6 +121,8 @@ namespace PharmacyForms.Forms
                     previousBtn.BackColor = Color.FromArgb(51,51,76);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    btnChangeUser.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+                    btnShowTutorial.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
                 }
             }
         }
@@ -187,14 +189,20 @@ namespace PharmacyForms.Forms
         {
             Dictionary<string, string> tutorials = new Dictionary<string, string>();
             string path = "Resources\\TutorialForApplication.json";
-            string jsonString = File.ReadAllText(path, Encoding.GetEncoding(1251));
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
+            string jsonString = File.ReadAllText(path, Encoding.GetEncoding(1251));
+            
             tutorials = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
-            foreach(var tutorial in tutorials)
-            {
-                if(tutorial.Key == CurrentUserStatic.Role.ToString())
-                MessageBox.Show(tutorial.Value, "Справка по пользованию.");
-            }
+            var tutorial = tutorials.Where(t => t.Key == CurrentUserStatic.Role.ToString()).FirstOrDefault();
+            MessageBox.Show(tutorial.Value, "Справка по пользованию.");
+
+
+            //foreach (var tutorial in tutorials)
+            //{
+            //    if(tutorial.Key == CurrentUserStatic.Role.ToString())
+            //        MessageBox.Show(tutorial.Value, "Справка по пользованию.");
+            //}
             
         }
     }
