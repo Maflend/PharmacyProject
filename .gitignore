@@ -1,5 +1,12 @@
-!TutorialForApplication.json
-![Dd]ebug/net5.0-windows/Resources/*
+##!PharmacyForms/bin/Debug/net5.0-windows/Resources/
+##PharmacyForms/bin/Debug/net5.0-windows/
+
+
+
+
+
+
+
 
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -22,15 +29,15 @@
 .packages/
 
 # Build results
-[Dd]ebug/
+
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
 [Oo]bj/
+
 [Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
