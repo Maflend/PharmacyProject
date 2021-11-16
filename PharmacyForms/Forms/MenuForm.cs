@@ -48,6 +48,7 @@ namespace PharmacyForms.Forms
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
             if (CurrentUserStatic.Role == Roles.Admin)
             {
@@ -63,11 +64,13 @@ namespace PharmacyForms.Forms
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
             if (CurrentUserStatic.Role == Roles.Client)
             {
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
         }
         private void OpenChildForm(Form childForm,object btnSender)
@@ -204,6 +207,13 @@ namespace PharmacyForms.Forms
             //        MessageBox.Show(tutorial.Value, "Справка по пользованию.");
             //}
             
+        }
+
+        private void btnOpenInteractionWithDataBaseForm_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new InteractionWithDataBaseForm(), sender);
+            ActivateButton(sender);
         }
     }
 }

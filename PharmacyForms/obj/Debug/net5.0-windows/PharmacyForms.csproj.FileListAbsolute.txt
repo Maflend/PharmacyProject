@@ -474,3 +474,4 @@ C:\Users\Maflend\Desktop\PharmacyProject\PharmacyProject\PharmacyForms\obj\Debug
 C:\Users\Maflend\Desktop\PharmacyProject\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Maflend\Desktop\PharmacyProject\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\System.Text.Encoding.CodePages.dll
 C:\Users\Maflend\Desktop\PharmacyProject\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\Maflend\Desktop\PharmacyProject\PharmacyProject\PharmacyForms\obj\Debug\net5.0-windows\PharmacyForms.Forms.InteractionWithDataBaseForm.resources
