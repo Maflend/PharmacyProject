@@ -13,5 +13,7 @@ namespace PharmacyForms
         public static string Login { get; set; }
         public static string Password { get; set; }
         public static Roles Role { get; set; }
+
+        public static bool EmergencyStart = false;
     }
 }

@@ -17,48 +17,52 @@ namespace PharmacyForms.Forms
         {
             InitializeComponent();
         }
-        SqlConnection conWithBase = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;");
-        SqlConnection conWithMaster = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;");
+
+        SqlConnection conWithBase;
+        SqlConnection conWithMaster;
          
         private void InteractionWithDataBaseForm_Load(object sender, EventArgs e)
         {
             btnBackUp.Enabled = false;
+            btnRestore.Enabled = false;
+            if (CurrentUserStatic.EmergencyStart == true)
+                btnBrowseForBackUp.Enabled = false;
+
+           
         }
         private void btnBackUp_Click(object sender, EventArgs e)
         {
             try
             {
                 TryBackUp();
-                MessageBox.Show("Done");
+                MessageBox.Show("Сохранение базы данных успешно.");
             }
-            catch(NullPathException nullPathException)
+            catch(Exception ex)
             {
-                MessageBox.Show(nullPathException.Message);
-            }
-            catch(FailedConnectionException failedConnectionException)
-            {
-                MessageBox.Show(failedConnectionException.Message);
+                MessageBox.Show(ex.Message);
             }
         }
         private void TryBackUp()
         {
             if (tbPathForBackUp.Text == String.Empty)
-                throw new NullPathException("Не указан путь.");
+                throw new Exception("Не указан путь.");
             try
             {
                 conWithBase.Open();
                 string database = conWithBase.Database.ToString();
-                string date = DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss");
-                //string cmd = $"BACKUP DATABASE [\"{database}\"] TO DISK = '{tbPathForBackUp.Text}\\{database}-{date}.bak'";
-                //string cmd = "BACKUP DATABASE [" + database + "] TO DISK = '" + "tbPathForBackUp.Text" + "\\" + database + date + ".bak'";
-                string cmd = "BACKUP DATABASE [" + database + "] TO DISK = '" + tbPathForBackUp.Text + "\\Pharma22y.bak'";
+                string dateNow = DateTime.Now.ToString("yyyy.MM.dd-HHчmmм");
+ 
+                string fileName = "'"+ tbPathForBackUp.Text + "\\" + database + "-" + dateNow + ")" + ".bak'";
+
+                string cmd = "BACKUP DATABASE [" + database + "] TO DISK = "+ fileName;
+
                 SqlCommand command = new SqlCommand(cmd, conWithBase);
                 command.ExecuteNonQuery();
                 conWithBase.Close();
             }
             catch
             {
-                throw new FailedConnectionException("Проблема с БД");
+                throw new Exception("Проблема с БД");
             }
         }
         private void btnBrowseForBackUp_Click(object sender, EventArgs e)
@@ -74,35 +78,77 @@ namespace PharmacyForms.Forms
         {
             try
             {
-                string database = conWithMaster.Database.ToString();
-                string sqlquery = "CREATE DATABASE PharmacyProject";
+                TryRestore();
+                if(CurrentUserStatic.EmergencyStart == true)
+                    MessageBox.Show("Востановление базы данных успешно. Перезайдите в аккаунт.");
+                else
+                    MessageBox.Show("Востановление базы данных успешно.");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void TryRestore()
+        {
+            conWithMaster.Open();
+            string database = conWithBase.Database.ToString();
+
+            try
+            {   
+                string sqlquery = "IF db_id('[PharmacyProject]') IS NOT NULL CREATE DATABASE PharmacyProject";
                 SqlCommand cmd = new SqlCommand(sqlquery, conWithMaster);
                 cmd.ExecuteNonQuery();
-
-                string sqlquery2 = "RESTORE DATABASE PharmacyProject FROM DISK = 'E:\\Data\\Test.bak' WITH REPLACE";
-                SqlCommand cmd2 = new SqlCommand(sqlquery2, conWithMaster);
-                cmd2.ExecuteNonQuery();
-
-                conWithMaster.Close();
             }
             catch
             {
-                MessageBox.Show("Ошибка");
+                conWithMaster.Close();
+                throw new Exception("Проблема с проверкой существования бд");
+            }
+            try
+            {
+                SqlConnection conWithMaster1 = new SqlConnection(@"Server=localhost\SQLEXPRESS;Trusted_Connection=True;");
+                string q1 = "alter database " + database + " set offline with rollback immediate";
+                SqlCommand cmd3 = new SqlCommand(q1, conWithMaster);
+                cmd3.ExecuteNonQuery();
+
+                string sqlquery2 = " USE MASTER RESTORE DATABASE [" + database + "] FROM DISK = '" + tbPathForRestore.Text + "' WITH REPLACE";
+                SqlCommand cmd2 = new SqlCommand(sqlquery2, conWithMaster);
+                cmd2.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception("Проблема с востановления бд");
+            }
+            finally
+            {
+                conWithMaster.Close();
             }
         }
 
+        private void btnBrowseForRestore_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "(*.bak)|*.bak";
+            dlg.Title = "Database restore";
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                tbPathForRestore.Text = dlg.FileName;
+                btnRestore.Enabled = true;
+            }
+        }
 
-    }
+        private void tbNewConnectionString_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(tbNewConnectionString.Text))
+            {
+                btnBrowseForBackUp.Enabled = false;
+                btnBrowseForRestore.Enabled = false;
 
-
-    class NullPathException : Exception
-    {
-        public NullPathException(string message) : base(message)
-        { }
-    }
-    class FailedConnectionException : Exception
-    {
-        public FailedConnectionException(string message) : base(message)
-        { }
+            }
+            conWithBase = new SqlConnection(@"Server=" + tbNewConnectionString.Text + "; Database=PharmacyProject;Trusted_Connection=True;");
+            conWithMaster = new SqlConnection(@"Server=" + tbNewConnectionString.Text + ";Database=master;Trusted_Connection=True;");
+        }
     }
 }

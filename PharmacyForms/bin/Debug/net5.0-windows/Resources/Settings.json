@@ -1,0 +1,5 @@
+{
+  "MyConnectionStringForPharmacyProject": "Server=localhost\\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;",
+  "MyConnectionStringForMaster": "Server=localhost\\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;",
+  "NewConnectionString": ""
+}
