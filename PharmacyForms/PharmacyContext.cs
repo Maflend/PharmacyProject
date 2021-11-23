@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PharmacyForms
 {
@@ -34,7 +35,7 @@ namespace PharmacyForms
         private string GetConnectionString()
         {
             Dictionary<string, string> settings = new Dictionary<string, string>();
-            string path = "Resources\\Settings.json"; //Менять строку подключения в этом файле по пути "PharmacyProject\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\Resources\Settings.json в поле MyConnectionStringForPharmacyProject"
+            string path = Path.Combine(Application.StartupPath, "Resources\\Settings.json"); //Менять строку подключения в этом файле по пути "PharmacyProject\PharmacyProject\PharmacyForms\bin\Debug\net5.0-windows\Resources\Settings.json в поле MyConnectionStringForPharmacyProject"
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string jsonString = File.ReadAllText(path, Encoding.GetEncoding(1251));
             settings = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);

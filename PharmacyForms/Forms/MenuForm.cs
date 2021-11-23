@@ -31,7 +31,7 @@ namespace PharmacyForms.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             // Для заполнения БД начальными данными
-           //AddItemsInDataBase add = new AddItemsInDataBase();
+          // AddItemsInDataBase add = new AddItemsInDataBase();
            //add.Add();
             // ...
             startForm = new StartForm(this);

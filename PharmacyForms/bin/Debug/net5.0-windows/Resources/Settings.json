@@ -1,5 +1,5 @@
 {
-  "MyConnectionStringForPharmacyProject": "Server=localhost\\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;",
+  "MyConnectionStringForPharmacyProject": "Server=tcp:pharmacyproject.database.windows.net,1433;Initial Catalog=PharmacyProject;Persist Security Info=False;User ID=Maflend;Password=PhPr34912;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
   "MyConnectionStringForMaster": "Server=localhost\\SQLEXPRESS;Database=PharmacyProject;Trusted_Connection=True;",
   "NewConnectionString": ""
 }
