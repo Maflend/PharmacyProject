@@ -30,6 +30,7 @@ namespace PharmacyForms.Forms
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnOpenInteractionWithDataBaseForm = new System.Windows.Forms.Button();
             this.btnShowTutorial = new System.Windows.Forms.Button();
             this.btnOrderHistory = new System.Windows.Forms.Button();
             this.btnMonthReport = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@ namespace PharmacyForms.Forms
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnOpenInteractionWithDataBaseForm);
             this.panelMenu.Controls.Add(this.btnShowTutorial);
             this.panelMenu.Controls.Add(this.btnOrderHistory);
             this.panelMenu.Controls.Add(this.btnMonthReport);
@@ -76,6 +78,28 @@ namespace PharmacyForms.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(233, 653);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnOpenInteractionWithDataBaseForm
+            // 
+            this.btnOpenInteractionWithDataBaseForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenInteractionWithDataBaseForm.FlatAppearance.BorderSize = 0;
+            this.btnOpenInteractionWithDataBaseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenInteractionWithDataBaseForm.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenInteractionWithDataBaseForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOpenInteractionWithDataBaseForm.Image = global::PharmacyForms.Properties.Resources.time_8_32;
+            this.btnOpenInteractionWithDataBaseForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenInteractionWithDataBaseForm.Location = new System.Drawing.Point(0, 565);
+            this.btnOpenInteractionWithDataBaseForm.Name = "btnOpenInteractionWithDataBaseForm";
+            this.btnOpenInteractionWithDataBaseForm.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnOpenInteractionWithDataBaseForm.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOpenInteractionWithDataBaseForm.Size = new System.Drawing.Size(233, 60);
+            this.btnOpenInteractionWithDataBaseForm.TabIndex = 11;
+            this.btnOpenInteractionWithDataBaseForm.Tag = "";
+            this.btnOpenInteractionWithDataBaseForm.Text = "   Взаимодействие с Бд";
+            this.btnOpenInteractionWithDataBaseForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenInteractionWithDataBaseForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenInteractionWithDataBaseForm.UseVisualStyleBackColor = true;
+            this.btnOpenInteractionWithDataBaseForm.Click += new System.EventHandler(this.btnOpenInteractionWithDataBaseForm_Click);
             // 
             // btnShowTutorial
             // 
@@ -450,5 +474,6 @@ namespace PharmacyForms.Forms
         private System.Windows.Forms.Button btnOrderHistory;
         private System.Windows.Forms.Button btnMonthReport;
         private System.Windows.Forms.Button btnShowTutorial;
+        private System.Windows.Forms.Button btnOpenInteractionWithDataBaseForm;
     }
 }

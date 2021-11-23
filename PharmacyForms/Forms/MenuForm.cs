@@ -37,7 +37,14 @@ namespace PharmacyForms.Forms
             startForm = new StartForm(this);
             startForm.ShowDialog();
             if (CurrentUserStatic.Login!= null)
+            {
                 lblUserLogin.Text = CurrentUserStatic.Login;
+                if(CurrentUserStatic.EmergencyStart == true)
+                {
+                    lblUserLogin.Text += "(Аварийный режим)";
+                }
+            }    
+                
             VisibleElements();
         }
         private void VisibleElements()
@@ -48,9 +55,15 @@ namespace PharmacyForms.Forms
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
             if (CurrentUserStatic.Role == Roles.Admin)
             {
+                if(CurrentUserStatic.EmergencyStart == true)
+                {
+                    btnShowAdminMenu.Visible = false;
+                }
+                
                 btnCategories.Visible = false;
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
@@ -63,11 +76,13 @@ namespace PharmacyForms.Forms
                 btnOrderHistory.Visible = false;
                 btnShoppingCart.Visible = false;
                 btnShowAdminMenu.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
             if (CurrentUserStatic.Role == Roles.Client)
             {
                 btnShowAdminMenu.Visible = false;
                 btnMonthReport.Visible = false;
+                btnOpenInteractionWithDataBaseForm.Visible = false;
             }
         }
         private void OpenChildForm(Form childForm,object btnSender)
@@ -196,14 +211,13 @@ namespace PharmacyForms.Forms
             tutorials = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
             var tutorial = tutorials.Where(t => t.Key == CurrentUserStatic.Role.ToString()).FirstOrDefault();
             MessageBox.Show(tutorial.Value, "Справка по пользованию.");
+        }
 
-
-            //foreach (var tutorial in tutorials)
-            //{
-            //    if(tutorial.Key == CurrentUserStatic.Role.ToString())
-            //        MessageBox.Show(tutorial.Value, "Справка по пользованию.");
-            //}
-            
+        private void btnOpenInteractionWithDataBaseForm_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new InteractionWithDataBaseForm(), sender);
+            ActivateButton(sender);
         }
     }
 }
