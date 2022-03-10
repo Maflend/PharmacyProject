@@ -1,0 +1,3 @@
+# PharmacyProject
+Cours AdministrationInformationSystems by Sench
+Дестномное приложения по Администрированию информационных систем
